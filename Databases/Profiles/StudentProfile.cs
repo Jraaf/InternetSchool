@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Databases.Common.DTO;
+using Databases.DTO;
 using Databases.Models;
 
 namespace Databases.Profiles

@@ -17,14 +17,25 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<ISchoolService, SchoolService>();
+builder.Services.AddTransient<ITeacherService, TeacherService>();
+
 builder.Services.AddDbContext<InternetSchoolDBContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("InternetSchoolConnection"));
 });
 
 
-var automapper = new MapperConfiguration(t=>t.AddProfile(new SchoolProfile()));
-IMapper mapper=automapper.CreateMapper();
+var automapper = new MapperConfiguration(t=> {
+    t.AddProfile(new SchoolProfile());
+    t.AddProfile(new TeacherProfile());
+    t.AddProfile(new GroupProfile());
+    t.AddProfile(new StudentProfile());
+    t.AddProfile(new SubjectProfile());
+});
+
+
+
+IMapper mapper =automapper.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
 //builder.Services.AddDbContext<HotelContext>(

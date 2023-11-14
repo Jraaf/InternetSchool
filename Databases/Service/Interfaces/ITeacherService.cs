@@ -12,5 +12,6 @@ namespace Databases.Service.Interfaces
         Task<bool> UpdateTeacher(TeacherDTO teacher, int Id);
         Task<bool> RemoveTeahcerFromSchool(int teacherId);
         Task<bool> SetTeacherToSchool(int TeacherId, int SchoolId);
+        Task<List<TeacherOutDTO>> GetTeachersOfSchool(int schoolId);
     }
 }

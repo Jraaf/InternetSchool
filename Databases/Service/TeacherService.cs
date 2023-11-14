@@ -50,14 +50,14 @@ namespace Databases.Service
             var res=mapper.Map<List<Teacher>, List<TeacherOutDTO>>(data);
             return res;
         }
-        public async Task<List<TeacherDTO>> GetTeachersOfSchool(int schoolId)
+        public async Task<List<TeacherOutDTO>> GetTeachersOfSchool(int schoolId)
         {
             var data = await context.Teachers.ToListAsync();
             var teachers = (from t in data
                             where t.SchoolId == schoolId
                             select t)
                           .ToList();
-            var res = mapper.Map<List<Teacher>, List<TeacherDTO>>(teachers);
+            var res = mapper.Map<List<Teacher>, List<TeacherOutDTO>>(teachers);
             return res;
         }       
 
@@ -132,5 +132,7 @@ namespace Databases.Service
                 throw;
             }
         }
+
+
     }
 }

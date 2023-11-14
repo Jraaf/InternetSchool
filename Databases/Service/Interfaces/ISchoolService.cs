@@ -1,4 +1,4 @@
-﻿using Databases.Common.DTO;
+﻿using Databases.DTO;
 
 namespace Databases.Service.Interfaces
 {
