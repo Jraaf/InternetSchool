@@ -1,5 +1,4 @@
-﻿using Databases.Common.DTO;
-
+﻿
 namespace Databases.DTO
 {
     public class GroupDTO

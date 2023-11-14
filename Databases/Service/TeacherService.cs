@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Azure.Core;
-using Databases.Common.DTO;
+using Databases.DTO;
+using Databases.DTO.Out;
 using Databases.Models;
 using Databases.Service.Interfaces;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -32,23 +33,33 @@ namespace Databases.Service
             }
         }
 
-        public async Task<TeacherDTO> GetTeacherById(int Id)
+        public async Task<TeacherOutDTO> GetTeacherById(int Id)
         {
-            TeacherDTO teacher=new();
+            TeacherOutDTO teacher=new();
             var res=await context.Teachers.FindAsync(Id);
             if (res != null)
             {
-                teacher = mapper.Map<Teacher, TeacherDTO>(res);
+                teacher = mapper.Map<Teacher, TeacherOutDTO>(res);
             }
             return teacher;
         }
 
-        public async Task<List<TeacherDTO>> GetTeachers()
+        public async Task<List<TeacherOutDTO>> GetTeachers()
         {
             var data=await context.Teachers.ToListAsync();
-            var res=mapper.Map<List<Teacher>, List<TeacherDTO>>(data);
+            var res=mapper.Map<List<Teacher>, List<TeacherOutDTO>>(data);
             return res;
         }
+        public async Task<List<TeacherDTO>> GetTeachersOfSchool(int schoolId)
+        {
+            var data = await context.Teachers.ToListAsync();
+            var teachers = (from t in data
+                            where t.SchoolId == schoolId
+                            select t)
+                          .ToList();
+            var res = mapper.Map<List<Teacher>, List<TeacherDTO>>(teachers);
+            return res;
+        }       
 
         public async Task<bool> PostTeacher(TeacherDTO teacher)
         {

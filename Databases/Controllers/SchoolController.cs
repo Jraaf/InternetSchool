@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Databases.Common.DTO;
+using Databases.DTO;
 using Databases.Service.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +32,16 @@ namespace Databases.Controllers
         {
             var res = await service.GetSchoolById(Id);
             if (res == null)
+            {
+                return NotFound();
+            }
+            return Ok(res);
+        }
+        [HttpGet("GetSchoolId")]
+        public async Task<IActionResult> GetSchoolID(string schoolName)
+        {
+            var res=await service.GetSchoolID(schoolName);
+            if (res == -1)
             {
                 return NotFound();
             }

@@ -10,5 +10,6 @@ namespace Databases.Service.Interfaces
         Task<bool> DeleteSchool(int SchoolId);
         Task<bool> UpdateSchool(SchoolDTO school, int Id);
         Task<int> GetSchoolID(string SchoolName);
+
     }
 }

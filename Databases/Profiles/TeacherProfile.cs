@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-using Databases.Common.DTO;
+using Databases.DTO;
+using Databases.DTO.Out;
 using Databases.Models;
 
 namespace Databases.Profiles
@@ -9,6 +10,7 @@ namespace Databases.Profiles
         public TeacherProfile()
         {
             CreateMap<TeacherDTO, Teacher>().ReverseMap();
+            CreateMap<Teacher, TeacherOutDTO>().ReverseMap();
         }
     }
 }
