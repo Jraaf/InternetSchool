@@ -78,10 +78,7 @@ namespace InternetShcool.DAL.Repository
         {
             try
             {
-                var data = context.Groups.ToList();
-                var res=(from d in data
-                        where d.Id == id
-                        select d).ToList().First();
+                var res = await context.Groups.FindAsync(id);
                 return res;
             }
             catch (Exception)
@@ -113,7 +110,7 @@ namespace InternetShcool.DAL.Repository
             try
             {
                 await context.AddAsync(group);
-                context.SaveChangesAsync();
+                await context.SaveChangesAsync();
                 return true;
             }
             catch (Exception)

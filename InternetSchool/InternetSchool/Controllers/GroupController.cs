@@ -30,7 +30,7 @@ namespace InternetSchool.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             var data = await service.GetGroupById(id);
-            if (data == null)
+            if (data != null)
             {
                 return Ok(data);
             }
@@ -40,7 +40,7 @@ namespace InternetSchool.Controllers
         public async Task<IActionResult> GetByName(string name)
         {
             var data = await service.GetGroupByName(name);
-            if (data == null)
+            if (data != null)
             {
                 return Ok(data);
             }
@@ -50,31 +50,19 @@ namespace InternetSchool.Controllers
         public async Task<IActionResult> PostGroup(CreateGroupDTO group)
         {
             var data = await service.PostGroup(group);
-            if (data == null)
-            {
-                return Ok(data);
-            }
-            return BadRequest();
+            return data? Ok(data):BadRequest();
         }
         [HttpDelete("DeleteGroup")]
         public async Task<IActionResult> DeleteGroup(int id)
         {
             var data = await service.DeleteGroup(id);
-            if (data == null)
-            {
-                return Ok(data);
-            }
-            return BadRequest();
+            return data ? Ok(data) : BadRequest();
         }
         [HttpPut("Update")]
         public async Task<IActionResult> UpdateGroup(int id,CreateGroupDTO group)
         {
             var data = await service.UpdateGroup(group,id);
-            if (data == null)
-            {
-                return Ok(data);
-            }
-            return BadRequest();
+            return data ? Ok(data) : BadRequest();
         }
     }
 }

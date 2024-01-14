@@ -27,7 +27,7 @@ namespace InternetSchool.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             var data = await service.GetTeacherById(id);
-            if (data == null)
+            if (data != null)
             {
                 return Ok(data);
             }
@@ -37,7 +37,7 @@ namespace InternetSchool.Controllers
         //public async Task<IActionResult> GetByName(string name)
         //{
         //    var data = await service.GetTeacherByName(name);
-        //    if (data == null)
+        //    if (data != null)
         //    {
         //        return Ok(data);
         //    }
@@ -47,31 +47,19 @@ namespace InternetSchool.Controllers
         public async Task<IActionResult> PostTeacher(CreateTeacherDTO teacher)
         {
             var data = await service.PostTeacher(teacher);
-            if (data == null)
-            {
-                return Ok(data);
-            }
-            return BadRequest();
+            return data ? Ok(data) : BadRequest();
         }
         [HttpDelete("DeleteTeacher")]
         public async Task<IActionResult> DeleteTeacher(int id)
         {
             var data = await service.DeleteTeacherById(id);
-            if (data == null)
-            {
-                return Ok(data);
-            }
-            return BadRequest();
+            return data ? Ok(data) : BadRequest();
         }
         [HttpPut("Update")]
         public async Task<IActionResult> UpdateTeacher(int id, CreateTeacherDTO teacher)
         {
             var data = await service.UpdateTeacher(id, teacher);
-            if (data == null)
-            {
-                return Ok(data);
-            }
-            return BadRequest();
+            return data ? Ok(data) : BadRequest();
         }
     }
 }

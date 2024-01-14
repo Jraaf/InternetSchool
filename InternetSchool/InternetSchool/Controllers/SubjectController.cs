@@ -27,7 +27,7 @@ namespace InternetSchool.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             var data = await service.GetSubjectById(id);
-            if (data == null)
+            if (data != null)
             {
                 return Ok(data);
             }
@@ -37,7 +37,7 @@ namespace InternetSchool.Controllers
         public async Task<IActionResult> GetByName(string name)
         {
             var data = await service.GetSubjectByName(name);
-            if (data == null)
+            if (data != null)
             {
                 return Ok(data);
             }
@@ -47,31 +47,19 @@ namespace InternetSchool.Controllers
         public async Task<IActionResult> PostSubject(CreateSubjectDTO subject)
         {
             var data = await service.PostSubject(subject);
-            if (data == null)
-            {
-                return Ok(data);
-            }
-            return BadRequest();
+            return data ? Ok(data) : BadRequest();
         }
         [HttpDelete("DeleteSubject")]
         public async Task<IActionResult> DeleteSubject(int id)
         {
             var data = await service.DeleteSubjectById(id);
-            if (data == null)
-            {
-                return Ok(data);
-            }
-            return BadRequest();
+            return data ? Ok(data) : BadRequest();
         }
         [HttpPut("Update")]
         public async Task<IActionResult> UpdateSubject(int id, CreateSubjectDTO subject)
         {
             var data = await service.UpdateSubject(id, subject);
-            if (data == null)
-            {
-                return Ok(data);
-            }
-            return BadRequest();
+            return data ? Ok(data) : BadRequest();
         }
     }
 }

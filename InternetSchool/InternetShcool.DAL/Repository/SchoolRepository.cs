@@ -77,10 +77,7 @@ namespace InternetShcool.DAL.Repository
         {
             try
             {
-                var data = context.Schools.ToList();
-                var res = (from d in data
-                           where d.Id == id
-                           select d).ToList().First();
+                var res = await context.Schools.FindAsync(id);
                 return res;
             }
             catch (Exception)
@@ -90,14 +87,14 @@ namespace InternetShcool.DAL.Repository
             }
         }
 
-        public async Task<School> GetSchoolByName(string schoolName)
+        public async Task<List<School>> GetSchoolByName(string schoolName)
         {
             try
             {
                 var data = context.Schools.ToList();
                 var res = (from d in data
                            where d.Name == schoolName
-                           select d).ToList().First();
+                           select d).ToList();
                 return res;
             }
             catch (Exception)

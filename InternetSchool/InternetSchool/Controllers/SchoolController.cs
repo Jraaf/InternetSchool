@@ -38,7 +38,7 @@ namespace InternetSchool.Controllers
         public async Task<IActionResult> GetByName(string name)
         {
             var data = await service.GetSchoolByName(name);
-            if (data == null)
+            if (data != null)
             {
                 return Ok(data);
             }
@@ -48,31 +48,19 @@ namespace InternetSchool.Controllers
         public async Task<IActionResult> PostSchool(CreateSchoolDTO group)
         {
             var data = await service.PostSchool(group);
-            if (data != null)
-            {
-                return Ok(data);
-            }
-            return BadRequest();
+            return data ? Ok(data) : BadRequest();
         }
         [HttpDelete("DeleteSchool")]
         public async Task<IActionResult> DeleteSchool(int id)
         {
             var data = await service.DeleteSchool(id);
-            if (data == null)
-            {
-                return Ok(data);
-            }
-            return BadRequest();
+            return data ? Ok(data) : BadRequest();
         }
         [HttpPut("Update")]
         public async Task<IActionResult> UpdateSchool(int id, CreateSchoolDTO group)
         {
             var data = await service.UpdateSchool(group, id);
-            if (data == null)
-            {
-                return Ok(data);
-            }
-            return BadRequest();
+            return data ? Ok(data) : BadRequest();
         }
     }
 }

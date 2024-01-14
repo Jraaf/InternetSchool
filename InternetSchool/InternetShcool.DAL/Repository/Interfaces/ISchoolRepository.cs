@@ -11,7 +11,7 @@ namespace InternetShcool.DAL.Repository.Interfaces
     {
         Task<List<School>> GetAllSchools();
         Task<School> GetSchoolById(int id);
-        Task<School> GetSchoolByName(string groupName);
+        Task<List<School>> GetSchoolByName(string groupName);
         Task<bool> PostSchool(School group);
         Task<bool> DeleteSchoolById(int id);
         Task<bool> DeleteSchoolByName(string group);
