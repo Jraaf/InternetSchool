@@ -28,7 +28,7 @@ namespace InternetSchool.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             var data = await service.GetSchoolById(id);
-            if (data == null)
+            if (data != null)
             {
                 return Ok(data);
             }

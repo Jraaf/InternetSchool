@@ -28,7 +28,7 @@ namespace InternetSchool.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             var data = await service.GetStudentById(id);
-            if (data == null)
+            if (data != null)
             {
                 return Ok(data);
             }
@@ -38,7 +38,7 @@ namespace InternetSchool.Controllers
         public async Task<IActionResult> GetByName(string name)
         {
             var data = await service.GetStudentByName(name);
-            if (data == null)
+            if (data != null)
             {
                 return Ok(data);
             }
