@@ -64,7 +64,7 @@ namespace InternetShcool.DAL.Repository
         {
             try
             {
-                var data=context.Groups.ToList();
+                var data=await context.Groups.ToListAsync();
                 return data;
             }
             catch (Exception)
@@ -92,7 +92,7 @@ namespace InternetShcool.DAL.Repository
         {
             try
             {
-                var data = context.Groups.ToList();
+                var data = await context.Groups.ToListAsync();
                 var res = (from d in data
                            where d.Name == groupName
                            select d).ToList();

@@ -1,6 +1,7 @@
 ﻿using InternetSchool.Models;
 using InternetShcool.DAL.EF;
 using InternetShcool.DAL.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,7 +64,7 @@ namespace InternetShcool.DAL.Repository
         {
             try
             {
-                var data = context.Schools.ToList();
+                var data =await context.Schools.ToListAsync();
                 return data;
             }
             catch (Exception)
@@ -91,7 +92,7 @@ namespace InternetShcool.DAL.Repository
         {
             try
             {
-                var data = context.Schools.ToList();
+                var data = await context.Schools.ToListAsync();
                 var res = (from d in data
                            where d.Name == schoolName
                            select d).ToList();
