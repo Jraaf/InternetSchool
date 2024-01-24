@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using InternetSchool.Models;
-using InternetScool.BLL.DTO;
+using InternetScool.Common.DTO;
 
 namespace InternetScool.BLL.Profiles
 {

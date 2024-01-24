@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\InternetSchool.Common\InternetSchool.Common.csproj" />
     <ProjectReference Include="..\InternetShcool.DAL\InternetShcool.DAL.csproj" />
   </ItemGroup>
 

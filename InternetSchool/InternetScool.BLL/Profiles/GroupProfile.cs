@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using InternetSchool.Models;
+using InternetScool.Common.DTO;
+using InternetScool.Common.DTO.Out;
 
 
 namespace InternetScool.BLL.Profiles
@@ -8,8 +10,8 @@ namespace InternetScool.BLL.Profiles
     {
         public GroupProfile()
         {
-            CreateMap<DTO.CreateGroupDTO, Group>();
-            CreateMap<Group, DTO.Out.GroupDTO>();
+            CreateMap<CreateGroupDTO, Group>();
+            CreateMap<Group,GroupDTO>();
         }
     }
 }

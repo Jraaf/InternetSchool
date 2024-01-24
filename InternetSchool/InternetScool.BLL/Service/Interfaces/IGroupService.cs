@@ -1,6 +1,6 @@
 ﻿
-using InternetScool.BLL.DTO;
-using InternetScool.BLL.DTO.Out;
+using InternetScool.Common.DTO;
+using InternetScool.Common.DTO.Out;
 
 namespace InternetScool.BLL.Service.Interfaces
 {

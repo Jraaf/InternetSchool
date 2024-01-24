@@ -1,5 +1,5 @@
-﻿using InternetScool.BLL.DTO;
-using InternetScool.BLL.Service.Interfaces;
+﻿using InternetScool.BLL.Service.Interfaces;
+using InternetScool.Common.DTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InternetSchool.Controllers

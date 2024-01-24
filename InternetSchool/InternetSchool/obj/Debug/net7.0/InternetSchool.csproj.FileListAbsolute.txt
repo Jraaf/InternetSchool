@@ -81,3 +81,5 @@ C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\obj\
 C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\obj\Debug\net7.0\ref\InternetSchool.dll
 C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\obj\Debug\net7.0\InternetSchool.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\bin\Debug\net7.0\InternetSchool.Common.dll
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\bin\Debug\net7.0\InternetSchool.Common.pdb

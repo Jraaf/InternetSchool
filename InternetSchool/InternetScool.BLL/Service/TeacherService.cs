@@ -1,11 +1,9 @@
 ﻿using AutoMapper;
-using Azure.Core;
 using InternetScool.BLL.Service.Interfaces;
 using InternetSchool.Models;
-using InternetScool.BLL.DTO.Out;
-using InternetScool.BLL.DTO;
 using InternetShcool.DAL.Repository.Interfaces;
-using Microsoft.EntityFrameworkCore;
+using InternetScool.Common.DTO.Out;
+using InternetScool.Common.DTO;
 
 namespace InternetScool.BLL.Service
 {

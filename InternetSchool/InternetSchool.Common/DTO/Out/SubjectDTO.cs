@@ -1,4 +1,4 @@
-﻿namespace InternetScool.BLL.DTO.Out
+﻿namespace InternetScool.Common.DTO.Out
 {
     public class SubjectDTO
     {

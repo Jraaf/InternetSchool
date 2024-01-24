@@ -1,14 +1,15 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InternetScool.BLL.DTO
+namespace InternetScool.Common.DTO
 {
-    public class CreateSchoolDTO
+    public class CreateSubjectDTO
     {
         public string Name { get; set; }
-        public string Description { get; set; }    
+        public string Description { get; set; }
     }
 }

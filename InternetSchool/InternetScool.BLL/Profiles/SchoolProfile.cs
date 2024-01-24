@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using InternetSchool.Models;
+using InternetScool.Common.DTO;
+using InternetScool.Common.DTO.Out;
 
 namespace InternetScool.BLL.Profiles
 {
@@ -7,8 +9,8 @@ namespace InternetScool.BLL.Profiles
     {
         public SchoolProfile()
         {
-            CreateMap<School, DTO.CreateSchoolDTO>().ReverseMap();
-            CreateMap<School, DTO.Out.SchoolDTO>().ReverseMap();
+            CreateMap<School, CreateSchoolDTO>().ReverseMap();
+            CreateMap<School, SchoolDTO>().ReverseMap();
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿
-namespace InternetScool.BLL.DTO
+namespace InternetScool.Common.DTO
 {
     public class CreateGroupDTO
     {

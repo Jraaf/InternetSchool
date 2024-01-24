@@ -13,3 +13,6 @@ C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetShcool.DAL\
 C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetShcool.DAL\obj\Debug\net7.0\InternetShcool.DAL.pdb
 C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetShcool.DAL\obj\Debug\net7.0\InternetShcool.DAL.genruntimeconfig.cache
 C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetShcool.DAL\obj\Debug\net7.0\ref\InternetShcool.DAL.dll
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetShcool.DAL\bin\Debug\net7.0\InternetSchool.Common.dll
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetShcool.DAL\bin\Debug\net7.0\InternetSchool.Common.pdb
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetShcool.DAL\obj\Debug\net7.0\InternetShcool.DAL.csproj.CopyComplete

@@ -3,10 +3,9 @@
 using InternetScool.BLL.Service.Interfaces;
 
 using InternetShcool.DAL.Repository.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using InternetScool.BLL.DTO.Out;
-using InternetScool.BLL.DTO;
 using InternetSchool.Models;
+using InternetScool.Common.DTO.Out;
+using InternetScool.Common.DTO;
 
 namespace InternetScool.BLL.Service
 {

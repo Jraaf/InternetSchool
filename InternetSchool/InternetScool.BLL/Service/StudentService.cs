@@ -1,14 +1,9 @@
 ﻿using AutoMapper;
-using InternetScool.BLL.DTO.Out;
-using InternetScool.BLL.DTO;
 using InternetShcool.DAL.Repository.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using InternetSchool.Models;
 using InternetScool.BLL.Service.Interfaces;
+using InternetScool.Common.DTO.Out;
+using InternetScool.Common.DTO;
 
 namespace InternetScool.BLL.Service
 {

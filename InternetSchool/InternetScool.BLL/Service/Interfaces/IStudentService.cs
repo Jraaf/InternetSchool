@@ -1,6 +1,6 @@
 ﻿using InternetSchool.Models;
-using InternetScool.BLL.DTO;
-using InternetScool.BLL.DTO.Out;
+using InternetScool.Common.DTO;
+using InternetScool.Common.DTO.Out;
 using System;
 using System.Collections.Generic;
 using System.Linq;

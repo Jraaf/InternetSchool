@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
 using InternetScool.BLL.Service.Interfaces;
-using InternetScool.BLL.DTO.Out;
-using InternetScool.BLL.DTO;
 using InternetShcool.DAL.Repository.Interfaces;
-using Microsoft.EntityFrameworkCore;
 using InternetSchool.Models;
+using InternetScool.Common.DTO.Out;
+using InternetScool.Common.DTO;
 
 namespace InternetScool.BLL.Service
 {
@@ -46,7 +45,7 @@ namespace InternetScool.BLL.Service
             return await repo.PostSchool(data);
         }
 
-        public async Task<bool> UpdateSchool(DTO.CreateSchoolDTO group, int Id)
+        public async Task<bool> UpdateSchool(CreateSchoolDTO group, int Id)
         {
             var data = mapper.Map<School>(group);
             return await repo.UpdateSchool(Id, data);

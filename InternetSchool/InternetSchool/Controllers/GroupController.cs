@@ -1,9 +1,6 @@
-﻿using InternetScool.BLL.DTO;
-using InternetScool.BLL.Service.Interfaces;
-using Microsoft.AspNetCore.Http;
+﻿using InternetScool.BLL.Service.Interfaces;
+using InternetScool.Common.DTO;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace InternetSchool.Controllers
 {
