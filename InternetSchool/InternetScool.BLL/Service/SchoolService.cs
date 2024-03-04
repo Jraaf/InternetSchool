@@ -11,6 +11,7 @@ namespace InternetScool.BLL.Service
     {
         private readonly IMapper mapper;
         private readonly ISchoolRepository repo;
+
         public SchoolService(ISchoolRepository repo, IMapper mapper)
         {
             this.mapper = mapper;

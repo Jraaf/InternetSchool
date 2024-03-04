@@ -83,3 +83,5 @@ C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\obj\
 C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\bin\Debug\net7.0\InternetSchool.Common.dll
 C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\bin\Debug\net7.0\InternetSchool.Common.pdb
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\bin\Debug\net7.0\BCrypt.Net-Next.dll
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

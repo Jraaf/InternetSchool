@@ -10,3 +10,4 @@ C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool.Comm
 C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool.Common\obj\Debug\net7.0\refint\InternetSchool.Common.dll
 C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool.Common\obj\Debug\net7.0\InternetSchool.Common.pdb
 C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool.Common\obj\Debug\net7.0\ref\InternetSchool.Common.dll
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool.Common\obj\Debug\net7.0\InternetSchool.Common.csproj.AssemblyReference.cache
