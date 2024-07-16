@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace InternetShcool.DAL.Migrations
 {
-    [DbContext(typeof(InternetSchoolDBContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     partial class InternetSchoolDBContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

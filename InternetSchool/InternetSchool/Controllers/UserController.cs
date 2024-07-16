@@ -26,7 +26,7 @@ namespace InternetSchool.Controllers
             _configuration = configuration;
 
         }
-        [HttpPost("register")]
+        [HttpPost("register")] 
         public ActionResult<CreateUserDTO> Register(CreateUserDTO request)
         {
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);

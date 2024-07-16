@@ -4,52 +4,51 @@ using InternetShcool.DAL.Repository.Interfaces;
 using InternetSchool.Models;
 using InternetScool.Common.DTO.Out;
 using InternetScool.Common.DTO;
+using InternetSchool.Common.Exceptions;
+using Microsoft.EntityFrameworkCore;
 
 namespace InternetScool.BLL.Service
 {
     public class SchoolService : ISchoolService
     {
         private readonly IMapper mapper;
-        private readonly ISchoolRepository repo;
-
-        public SchoolService(ISchoolRepository repo, IMapper mapper)
+        private readonly IRepository<School> repo;
+        public SchoolService(IRepository<School> repo, IMapper mapper)
         {
             this.mapper = mapper;
             this.repo = repo;
         }
-        public async Task<bool> DeleteSchool(int SchoolId)
+        public async Task<bool> Delete(int Id)
         {
-            return await repo.DeleteSchoolById(SchoolId);
+            var group = repo.FirstOrDefault(s => s.Id == Id)
+                ?? throw new NotFoundException(Id);
+            return await repo.DeleteAsync(group);
         }
 
-        public async Task<SchoolDTO> GetSchoolById(int SchoolId)
+        public async Task<SchoolDTO> GetById(int Id)
         {
-            var data = await repo.GetSchoolById(SchoolId);
-            return mapper.Map<SchoolDTO>(data);
+            var group = await repo.FirstAsync(s => s.Id == Id)
+                ?? throw new NotFoundException(Id);
+            var res = mapper.Map<SchoolDTO>(group);
+            return res;
         }
 
-        public async Task<List<SchoolDTO>> GetSchoolByName(string Name)
+        public async Task<List<SchoolDTO>> GetAll()
         {
-            var data=await repo.GetSchoolByName(Name);
+            var data = await repo.GetAllAsync();
             return mapper.Map<List<SchoolDTO>>(data);
         }
 
-        public async Task<List<SchoolDTO>> GetSchools()
-        {
-            var data = await repo.GetAllSchools();
-            return mapper.Map<List<SchoolDTO>>(data);
-        }
-
-        public async Task<bool> PostSchool(CreateSchoolDTO group)
+        public async Task<bool> Post(CreateSchoolDTO group)
         {
             var data = mapper.Map<School>(group);
-            return await repo.PostSchool(data);
+            return await repo.AddAsync(data);
         }
 
-        public async Task<bool> UpdateSchool(CreateSchoolDTO group, int Id)
+        public async Task<bool> Update(CreateSchoolDTO group, int Id)
         {
             var data = mapper.Map<School>(group);
-            return await repo.UpdateSchool(Id, data);
+            return await repo.UpdateAsync(data, Id);
         }
     }
 }

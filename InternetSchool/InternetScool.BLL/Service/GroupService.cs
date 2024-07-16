@@ -4,6 +4,10 @@ using InternetSchool.Models;
 using InternetShcool.DAL.Repository.Interfaces;
 using InternetScool.Common.DTO;
 using InternetScool.Common.DTO.Out;
+using Microsoft.Identity.Client;
+using InternetSchool.Common.Exceptions;
+using Microsoft.EntityFrameworkCore.Query.Internal;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace InternetScool.BLL.Service
@@ -11,45 +15,43 @@ namespace InternetScool.BLL.Service
     public class GroupService : IGroupService
     {
         private readonly IMapper mapper;
-        private readonly IGroupRepository repo;
-        public GroupService(IGroupRepository repo, IMapper mapper)
+        private readonly IRepository<Group> repo;
+        public GroupService(IRepository<Group> repo, IMapper mapper)
         {
             this.mapper = mapper;
             this.repo = repo;
         }
-        public async Task<bool> DeleteGroup(int GroupId)
+        public async Task<bool> Delete(int Id)
         {
-            return await repo.DeleteGroupById(GroupId);
+            var group=repo.FirstOrDefault(s=>s.Id==Id)
+                ?? throw new Exception("There is no such group");
+            return await repo.DeleteAsync(group);
         }
 
-        public async Task<GroupDTO> GetGroupById(int GroupId)
+        public async Task<GroupDTO> GetById(int Id)
         {
-            var data=await repo.GetGroupById(GroupId);
-            return mapper.Map<GroupDTO>(data);
-        }
-
-        public async Task<List<GroupDTO>> GetGroupByName(string Name)
-        {
-            var res=mapper.Map<List<GroupDTO>>(await repo.GetGroupByName(Name));
+            var group = await repo.FirstAsync(s => s.Id == Id)
+                ?? throw new NotFoundException(Id);
+            var res=mapper.Map<GroupDTO>(group);
             return res;
         }
 
-        public async Task<List<GroupDTO>> GetGroups()
+        public async Task<List<GroupDTO>> GetAll()
         {
-            var data = await repo.GetAllGroups();
+            var data = await repo.GetAllAsync();
             return mapper.Map<List<GroupDTO>>(data);
         }
 
-        public async Task<bool> PostGroup(CreateGroupDTO group)
+        public async Task<bool> Post(CreateGroupDTO group)
         {
            var data = mapper.Map<Group>(group);
-           return await repo.PostGroup(data);
+           return await repo.AddAsync(data);
         }
 
-        public async Task<bool> UpdateGroup(CreateGroupDTO group, int Id)
+        public async Task<bool> Update(CreateGroupDTO group, int Id)
         {
             var data = mapper.Map<Group>(group);
-            return await repo.UpdateGroup(Id, data);
+            return await repo.UpdateAsync(data,Id);
         }
     }
 }

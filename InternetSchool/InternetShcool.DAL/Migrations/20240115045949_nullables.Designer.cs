@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace InternetShcool.DAL.Migrations
 {
-    [DbContext(typeof(InternetSchoolDBContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20240115045949_nullables")]
     partial class nullables
     {

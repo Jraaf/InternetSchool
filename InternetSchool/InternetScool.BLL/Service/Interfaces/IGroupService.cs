@@ -1,16 +1,17 @@
 ﻿
+using InternetSchool.Models;
 using InternetScool.Common.DTO;
 using InternetScool.Common.DTO.Out;
+using ServiceStack;
 
 namespace InternetScool.BLL.Service.Interfaces
 {
-    public interface IGroupService
+    public interface IGroupService:IService
     {
-        Task<List<GroupDTO>> GetGroups();
-        Task<GroupDTO> GetGroupById(int Id);
-        Task<List<GroupDTO>> GetGroupByName(string Name);
-        Task<bool> PostGroup(CreateGroupDTO group);
-        Task<bool> DeleteGroup(int GroupId);
-        Task<bool> UpdateGroup(CreateGroupDTO group, int Id);
+        public Task<List<Group>> GetAll();
+        public Task<GroupDTO> GetById(int Id);
+        public Task<bool> Post(Group group);
+        public Task<bool> Delete(int Id);
+        public Task<bool> Update(CreateGroupDTO CreateDTO, int Id);
     }
 }

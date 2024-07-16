@@ -1,6 +1,7 @@
 ﻿using InternetScool.BLL.Service.Interfaces;
 using InternetScool.Common.DTO;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.RegularExpressions;
 
 namespace InternetSchool.Controllers
 {
@@ -16,7 +17,7 @@ namespace InternetSchool.Controllers
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
-            var data=await service.GetGroups();
+            var data = await service.GetAll();
             if(data != null)
             {
                 return Ok(data);

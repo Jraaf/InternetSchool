@@ -1,18 +1,16 @@
-﻿
-
+﻿using InternetSchool.Models;
 using InternetScool.Common.DTO;
 using InternetScool.Common.DTO.Out;
+using ServiceStack;
 
 namespace InternetScool.BLL.Service.Interfaces
 {
     public interface ISchoolService
     {
-        Task<List<SchoolDTO>> GetSchools();        
-        Task<SchoolDTO> GetSchoolById(int ShcoolId);
-        Task<List<SchoolDTO>>GetSchoolByName(string Name);
-        Task<bool> PostSchool(CreateSchoolDTO school);
-        Task<bool> DeleteSchool(int SchoolId);
-        Task<bool> UpdateSchool(CreateSchoolDTO school, int Id);
-
+        public Task<List<SchoolDTO>> GetAll();
+        public Task<SchoolDTO> GetById(int Id);
+        public Task<bool> Post(CreateSchoolDTO school);
+        public Task<bool> Delete(int Id);
+        public Task<bool> Update(CreateSchoolDTO CreateDTO, int Id);
     }
 }

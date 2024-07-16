@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "eQeCJlY83EeEG8Z2fuRkOgbkx8x8SC/O98uZIzk9lGTP4HPn5mvDGr8m4PHwNKldigE+sgc96jz/u7kqRtW6pQ==",
+  "dgSpecHash": "fLh+gDUKVfCbLGnwz8YXBim0Lj30chxkkRhvTf51YlI9vgl3+Sz4Ki9yOcijFdkx4CuiWR/KivCL/Mp7v/kkAg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Acer\\Desktop\\projects\\InternetSchool\\InternetSchool\\InternetScool.BLL\\InternetScool.BLL.csproj",
   "expectedPackageFiles": [
@@ -44,6 +44,7 @@
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\servicestack.interfaces\\8.2.2\\servicestack.interfaces.8.2.2.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
