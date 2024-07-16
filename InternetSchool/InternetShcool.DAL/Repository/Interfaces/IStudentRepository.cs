@@ -5,7 +5,5 @@ namespace InternetShcool.DAL.Repository.Interfaces;
 
 public interface IStudentRepository : IRepo<Student, int>
 {
-    Task<List<Student>> GetStudentByName(string groupName);
-    Task<bool> PostStudent(Student group);
-    Task<bool> DeleteStudentByName(string group);
+    Task<List<Student>> GetStudentByName(string name);
 }

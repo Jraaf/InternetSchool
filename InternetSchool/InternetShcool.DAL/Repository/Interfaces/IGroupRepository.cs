@@ -5,6 +5,5 @@ namespace InternetShcool.DAL.Repository.Interfaces;
 
 public interface IGroupRepository : IRepo<Group, int>
 {
-    Task<List<Group>> GetGroupByName(string groupName);
-    Task<bool> DeleteGroupByName(string name);
+    Task<List<Group>> GetGroupByName(string name);
 }

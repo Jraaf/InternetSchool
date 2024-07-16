@@ -6,135 +6,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace InternetShcool.DAL.Repository;
 
-public class TeacherRepository: Repo<Teacher,int>, ITeacherRepository
+public class TeacherRepository : Repo<Teacher, int>, ITeacherRepository
 {
     private readonly InternetSchoolDBContext context;
     public TeacherRepository(InternetSchoolDBContext context)
-        :base(context)
+        : base(context)
     {
         this.context = context;
     }
-    public async Task<bool> DeleteTeacherById(int id)
+    public async Task<List<Teacher>> GetTeacherByName(string teacherName)
     {
         try
         {
-            var teacher = await context.Teachers.FindAsync(id);
-            if (teacher != null)
-            {
-                context.Teachers.Remove(teacher);
-                await context.SaveChangesAsync();
-                return true;
-            }
-            return false;
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-    }
-
-    public async Task<bool> DeleteTeacherByName(string name)
-    {
-        try
-        {
-            var data = context.Teachers.ToList();
-            var teacher = (from d in data
-                         where d.Name == name
-                         select d).ToList().First();
-            if (teacher != null)
-            {
-                context.Remove(teacher);
-                await context.SaveChangesAsync();
-                return true;
-            }
-            return false;
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-    }
-
-    public async Task<List<Teacher>> GetAllTeachers()
-    {
-        try
-        {
-            var data =await context.Teachers.ToListAsync();
-            return data;
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-    }
-
-    public async Task<Teacher> GetTeacherById(int id)
-    {
-        try
-        {
-            var data =await context.Teachers.ToListAsync();
-            var res = (from d in data
-                       where d.Id == id
-                       select d).ToList().First();
+            var res = await (from s in context.Teachers
+                             where s.Name == teacherName
+                             select s).ToListAsync();
             return res;
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-    }
-
-    public async Task<Teacher> GetTeacherByName(string teacherName)
-    {
-        try
-        {
-            var data = await context.Teachers.ToListAsync();
-            var res = (from d in data
-                       where d.Name == teacherName
-                       select d).ToList().First();
-            return res;
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-    }
-
-    public async Task<bool> PostTeacher(Teacher teacher)
-    {
-        try
-        {
-            await context.AddAsync(teacher);
-            await context.SaveChangesAsync();
-            return true;
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-    }
-
-    public async Task<bool> UpdateTeacher(int teacherId, Teacher teacher)
-    {
-        try
-        {
-            var data = await context.Teachers.FindAsync(teacherId);
-            if (data != null)
-            {
-                data.SchoolId = teacher.SchoolId;
-                data.Name = teacher.Name;
-                data.Description = teacher.Description;
-                await context.SaveChangesAsync();
-                return true;
-            }
-            return false;
-
         }
         catch (Exception)
         {

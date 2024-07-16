@@ -6,79 +6,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace InternetShcool.DAL.Repository;
 
-public class SubjectRepository:Repo<Subject,int>, ISubjectRepository
+public class SubjectRepository : Repo<Subject, int>, ISubjectRepository
 {
     private readonly InternetSchoolDBContext context;
     public SubjectRepository(InternetSchoolDBContext context)
-        :base(context)
+        : base(context)
     {
         this.context = context;
     }
-    public async Task<bool> DeleteSubjectById(int id)
+
+    public async Task<List<Subject>> GetSubjectByName(string name)
     {
         try
         {
-            var subject = await context.Subjects.FindAsync(id);
-            if (subject != null)
-            {
-                context.Subjects.Remove(subject);
-                await context.SaveChangesAsync();
-                return true;
-            }
-            return false;
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-    }
-
-    public async Task<bool> DeleteSubjectByName(string name)
-    {
-        try
-        {
-            var data = context.Subjects.ToList();
-            var subject = (from d in data
-                         where d.Name == name
-                         select d).ToList().First();
-            if (subject != null)
-            {
-                context.Remove(subject);
-                await context.SaveChangesAsync();
-                return true;
-            }
-            return false;
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-    }
-
-    public async Task<List<Subject>> GetAllSubjects()
-    {
-        try
-        {
-            var data = await context.Subjects.ToListAsync();
-            return data;
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-    }
-
-    public async Task<Subject> GetSubjectById(int id)
-    {
-        try
-        {
-            var data = await context.Subjects.ToListAsync();
-            var res = (from d in data
-                       where d.Id == id
-                       select d).ToList().First();
+            var res = await (from s in context.Subjects
+                             where s.Name == name
+                             select s).ToListAsync();
             return res;
         }
         catch (Exception)
@@ -88,57 +31,4 @@ public class SubjectRepository:Repo<Subject,int>, ISubjectRepository
         }
     }
 
-    public async Task<Subject> GetSubjectByName(string subjectName)
-    {
-        try
-        {
-            var data = await context.Subjects.ToListAsync();
-            var res = (from d in data
-                       where d.Name == subjectName
-                       select d).ToList().First();
-            return res;
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-    }
-
-    public async Task<bool> PostSubject(Subject subject)
-    {
-        try
-        {
-            await context.AddAsync(subject);
-            await context.SaveChangesAsync();
-            return true;
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-    }
-
-    public async Task<bool> UpdateSubject(int subjectId, Subject subject)
-    {
-        try
-        {
-            var data = await context.Subjects.FindAsync(subjectId);
-            if (data != null)
-            {
-                data.Name = subject.Name;
-                data.Description = subject.Description;
-                await context.SaveChangesAsync();
-                return true;
-            }
-            return false;
-
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-    }
 }
