@@ -8,10 +8,10 @@ namespace InternetScool.BLL.Service.Interfaces
 {
     public interface IGroupService:IService
     {
-        public Task<List<Group>> GetAll();
+        public Task<List<GroupDTO>> GetAll();
         public Task<GroupDTO> GetById(int Id);
-        public Task<bool> Post(Group group);
+        public Task<GroupDTO> Post(CreateGroupDTO DTO);
         public Task<bool> Delete(int Id);
-        public Task<bool> Update(CreateGroupDTO CreateDTO, int Id);
+        public Task<GroupDTO > Update(CreateGroupDTO CreateDTO, int Id);
     }
 }

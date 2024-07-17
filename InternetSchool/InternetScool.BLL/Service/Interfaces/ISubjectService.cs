@@ -9,8 +9,8 @@ namespace InternetScool.BLL.Service.Interfaces
     {
         public Task<List<SubjectDTO>> GetAll();
         public Task<SubjectDTO> GetById(int Id);
-        public Task<bool> Post(CreateSubjectDTO group);
+        public Task<SubjectDTO> Post(CreateSubjectDTO DTO);
         public Task<bool> Delete(int Id);
-        public Task<bool> Update(CreateSubjectDTO CreateDTO, int Id);
+        public Task<SubjectDTO> Update(CreateSubjectDTO CreateDTO, int Id);
     }
 }

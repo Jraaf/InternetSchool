@@ -8,49 +8,64 @@ using InternetScool.Common.DTO.Out;
 using InternetScool.Common.DTO;
 using InternetSchool.Common.Exceptions;
 using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace InternetScool.BLL.Service
 {
     public class SubjectService : ISubjectService
     {
-        private readonly IMapper mapper;
-        private readonly IRepository<Subject> repo;
-        public SubjectService(IRepository<Subject> repo, IMapper mapper)
+        private readonly IMapper _mapper;
+        private readonly ISubjectRepository _repo;
+        public SubjectService(ISubjectRepository repo, IMapper mapper)
         {
-            this.mapper = mapper;
-            this.repo = repo;
+            _mapper = mapper;
+            _repo = repo;
         }
         public async Task<bool> Delete(int Id)
         {
-            var group = repo.FirstOrDefault(s => s.Id == Id)
-                ?? throw new Exception("There is no such group");
-            return await repo.DeleteAsync(group);
+            var data = await _repo.GetAsync(Id);
+            if (data != null)
+            {
+                return await _repo.DeleteAsync(data);
+            }
+
+            throw new NotFoundException(Id);
         }
 
         public async Task<SubjectDTO> GetById(int Id)
         {
-            var group = await repo.FirstAsync(s => s.Id == Id)
-                ?? throw new NotFoundException(Id);
-            var res = mapper.Map<SubjectDTO>(group);
-            return res;
+            var data = await _repo.GetAsync(Id);
+            if (data != null)
+            {
+                return _mapper.Map<SubjectDTO>(data);
+            }
+
+            throw new NotFoundException(Id);
         }
 
         public async Task<List<SubjectDTO>> GetAll()
         {
-            var data = await repo.GetAllAsync();
-            return mapper.Map<List<SubjectDTO>>(data);
+            var data = await _repo.GetAllAsync();
+            return _mapper.Map<List<SubjectDTO>>(data);
         }
 
-        public async Task<bool> Post(CreateSubjectDTO group)
+        public async Task<SubjectDTO> Post(CreateSubjectDTO group)
         {
-            var data = mapper.Map<Subject>(group);
-            return await repo.AddAsync(data);
+            var data = _mapper.Map<Subject>(group);
+            var res = await _repo.AddAsync(data);
+
+            return _mapper.Map<SubjectDTO>(res);
         }
 
-        public async Task<bool> Update(CreateSubjectDTO group, int Id)
+        public async Task<SubjectDTO> Update(CreateSubjectDTO group, int Id)
         {
-            var data = mapper.Map<Subject>(group);
-            return await repo.UpdateAsync(data, Id);
+            var data = _mapper.Map<Subject>(group);
+            var entity = await _repo.GetAsync(Id);
+
+            entity = data;
+            entity.Id = Id;
+
+            return _mapper.Map<SubjectDTO>(await _repo.UpdateAsync(entity));
         }
     }
 }

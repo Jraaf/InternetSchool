@@ -11,44 +11,58 @@ namespace InternetScool.BLL.Service
 {
     public class TeacherService : ITeacherService
     {
-        private readonly IMapper mapper;
-        private readonly IRepository<Teacher> repo;
-        public TeacherService(IRepository<Teacher> repo, IMapper mapper)
+        private readonly IMapper _mapper;
+        private readonly ITeacherRepository _repo;
+        public TeacherService(ITeacherRepository repo, IMapper mapper)
         {
-            this.mapper = mapper;
-            this.repo = repo;
+            _mapper = mapper;
+            _repo = repo;
         }
         public async Task<bool> Delete(int Id)
         {
-            var group = repo.FirstOrDefault(s => s.Id == Id)
-                ?? throw new Exception("There is no such group");
-            return await repo.DeleteAsync(group);
+            var data = await _repo.GetAsync(Id);
+            if (data != null)
+            {
+                return await _repo.DeleteAsync(data);
+            }
+
+            throw new NotFoundException(Id);
         }
 
         public async Task<TeacherDTO> GetById(int Id)
         {
-            var group = await repo.FirstAsync(s => s.Id == Id)
-                ?? throw new NotFoundException(Id);
-            var res = mapper.Map<TeacherDTO>(group);
-            return res;
+            var data = await _repo.GetAsync(Id);
+            if (data != null)
+            {
+                return _mapper.Map<TeacherDTO>(data);
+            }
+
+            throw new NotFoundException(Id);
         }
 
         public async Task<List<TeacherDTO>> GetAll()
         {
-            var data = await repo.GetAllAsync();
-            return mapper.Map<List<TeacherDTO>>(data);
+            var data = await _repo.GetAllAsync();
+            return _mapper.Map<List<TeacherDTO>>(data);
         }
 
-        public async Task<bool> Post(CreateTeacherDTO group)
+        public async Task<TeacherDTO> Post(CreateTeacherDTO DTO)
         {
-            var data = mapper.Map<Teacher>(group);
-            return await repo.AddAsync(data);
+            var data = _mapper.Map<Teacher>(DTO);
+            var res = await _repo.AddAsync(data);
+
+            return _mapper.Map<TeacherDTO>(res);
         }
 
-        public async Task<bool> Update(CreateTeacherDTO group, int Id)
+        public async Task<TeacherDTO> Update(CreateTeacherDTO group, int Id)
         {
-            var data = mapper.Map<Teacher>(group);
-            return await repo.UpdateAsync(data, Id);
+            var data = _mapper.Map<Teacher>(group);
+            var entity = await _repo.GetAsync(Id);
+
+            entity = data;
+            entity.Id = Id;
+
+            return _mapper.Map<TeacherDTO>(await _repo.UpdateAsync(entity));
         }
     }
 }
