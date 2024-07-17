@@ -50,13 +50,14 @@ namespace InternetScool.BLL.Service
             return _mapper.Map<GroupDTO>(res);
         }
 
-        public async Task<GroupDTO> Update(CreateGroupDTO group, int Id)
+        public async Task<GroupDTO> Update(CreateGroupDTO DTO, int Id)
         {
-            var data = _mapper.Map<Group>(group);
             var entity = await _repo.GetAsync(Id)
                 ?? throw new NotFoundException(Id);
 
-            entity = data;
+            entity.SubjectId = DTO.SubjectId;
+            entity.TeacherId = DTO.TeacherId;
+            entity.Name = DTO.Name;
             entity.Id = Id;
 
             var res = await _repo.UpdateAsync(entity);

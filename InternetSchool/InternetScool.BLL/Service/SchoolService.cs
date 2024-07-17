@@ -54,14 +54,14 @@ namespace InternetScool.BLL.Service
 
         public async Task<SchoolDTO> Update(CreateSchoolDTO DTO, int Id)
         {
-            var data = _mapper.Map<School>(DTO);
             var entity = await _repo.GetAsync(Id)
                 ?? throw new NotFoundException(Id);
 
-            entity = data;
             entity.Id = Id;
+            entity.Description = DTO.Description;
+            entity.Name = DTO.Name;
 
-            return _mapper.Map<SchoolDTO>(await _repo.UpdateAsync(data));
+            return _mapper.Map<SchoolDTO>(await _repo.UpdateAsync(entity));
         }
 
         public async Task<List<SchoolDTO>> GetByName(string Name)

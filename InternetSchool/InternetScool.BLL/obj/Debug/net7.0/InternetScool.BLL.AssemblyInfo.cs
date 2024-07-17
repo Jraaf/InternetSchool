@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InternetScool.BLL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66c12c5ce28e1923cc22356798b564bf25de364e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91e1c1ae88164ff2ed24f56d91d4f283f596eb53")]
 [assembly: System.Reflection.AssemblyProductAttribute("InternetScool.BLL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InternetScool.BLL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
