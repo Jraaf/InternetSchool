@@ -85,3 +85,4 @@ C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\bin\
 C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\bin\Debug\net7.0\InternetSchool.Common.pdb
 C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\bin\Debug\net7.0\BCrypt.Net-Next.dll
 C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\bin\Debug\net7.0\ServiceStack.Interfaces.dll

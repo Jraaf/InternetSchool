@@ -63,5 +63,15 @@ namespace InternetScool.BLL.Service
             return _mapper.Map<GroupDTO>(res);
 
         }
+
+        public async Task<List<GroupDTO>> GetByName(string Name)
+        {
+            var data = await _repo.GetByName(Name);
+            if (data != null)
+            {
+                return _mapper.Map<List<GroupDTO>>(data);
+            }
+            throw new NotFoundException(Name);
+        }
     }
 }

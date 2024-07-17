@@ -5,5 +5,5 @@ namespace InternetShcool.DAL.Repository.Interfaces;
 
 public interface IStudentRepository : IRepo<Student, int>
 {
-    Task<List<Student>> GetStudentByName(string name);
+    Task<List<Student>> GetByName(string name);
 }

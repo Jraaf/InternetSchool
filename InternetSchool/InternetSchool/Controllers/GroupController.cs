@@ -18,7 +18,7 @@ namespace InternetSchool.Controllers
         public async Task<IActionResult> GetAll()
         {
             var data = await service.GetAll();
-            if(data != null)
+            if (data != null)
             {
                 return Ok(data);
             }
@@ -27,7 +27,7 @@ namespace InternetSchool.Controllers
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(int id)
         {
-            var data = await service.GetGroupById(id);
+            var data = await service.GetById(id);
             if (data != null)
             {
                 return Ok(data);
@@ -37,7 +37,7 @@ namespace InternetSchool.Controllers
         [HttpGet("GetByName")]
         public async Task<IActionResult> GetByName(string name)
         {
-            var data = await service.GetGroupByName(name);
+            var data = await service.GetByName(name);
             if (data != null)
             {
                 return Ok(data);
@@ -45,22 +45,22 @@ namespace InternetSchool.Controllers
             return NoContent();
         }
         [HttpPost("PostGroup")]
-        public async Task<IActionResult> PostGroup(CreateGroupDTO group)
+        public async Task<IActionResult> Post(CreateGroupDTO group)
         {
-            var data = await service.PostGroup(group);
-            return data? Ok(data):BadRequest();
+            var data = await service.Post(group);
+            return Ok(data);
         }
         [HttpDelete("DeleteGroup")]
-        public async Task<IActionResult> DeleteGroup(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var data = await service.DeleteGroup(id);
+            var data = await service.Delete(id);
             return data ? Ok(data) : BadRequest();
         }
         [HttpPut("Update")]
-        public async Task<IActionResult> UpdateGroup(int id,CreateGroupDTO group)
+        public async Task<IActionResult> Update(int id, CreateGroupDTO DTO)
         {
-            var data = await service.UpdateGroup(group,id);
-            return data ? Ok(data) : BadRequest();
+            var data = await service.Update(DTO, id);
+            return Ok(data);
         }
     }
 }

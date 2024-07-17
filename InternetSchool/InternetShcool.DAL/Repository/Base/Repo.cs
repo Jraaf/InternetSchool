@@ -38,7 +38,6 @@ public class Repo<TEntity, TKey> : IRepo<TEntity, TKey>
         await _table.AddRangeAsync(entities);
         return SaveChanges() > 0;
     }
-
     public async Task<bool> DeleteAsync(TEntity entity)
     {
         _table.Remove(entity);

@@ -15,7 +15,7 @@ public class SubjectRepository : Repo<Subject, int>, ISubjectRepository
         this.context = context;
     }
 
-    public async Task<List<Subject>> GetSubjectByName(string name)
+    public async Task<List<Subject>> GetByName(string name)
     {
         try
         {

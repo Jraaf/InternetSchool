@@ -64,5 +64,15 @@ namespace InternetScool.BLL.Service
 
             return _mapper.Map<TeacherDTO>(await _repo.UpdateAsync(entity));
         }
+
+        public async Task<List<TeacherDTO>> GetByName(string Name)
+        {
+            var data = await _repo.GetByName(Name);
+            if (data != null)
+            {
+                return _mapper.Map<List<TeacherDTO>>(data);
+            }
+            throw new NotFoundException(Name);
+        }
     }
 }

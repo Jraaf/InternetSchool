@@ -15,7 +15,7 @@ public class GroupRepository : Repo<Group, int>, IGroupRepository
         this.context = context;
     }
 
-    public async Task<List<Group>> GetGroupByName(string name)
+    public async Task<List<Group>> GetByName(string name)
     {
         try
         {

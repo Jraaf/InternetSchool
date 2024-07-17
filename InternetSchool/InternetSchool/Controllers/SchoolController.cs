@@ -7,19 +7,19 @@ using Microsoft.AspNetCore.Mvc;
 namespace InternetSchool.Controllers
 {
     [Authorize]
-    [Route("api/[controller]")]
+    [Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
     [ApiController]
     public class SchoolController : ControllerBase
     {
-        private readonly ISchoolService service;
+        private readonly ISchoolService _service;
         public SchoolController(ISchoolService service)
         {
-            this.service = service;
+            _service = service;
         }
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
-            var data = await service.GetSchools();
+            var data = await _service.GetAll();
             if (data != null)
             {
                 return Ok(data);
@@ -29,7 +29,7 @@ namespace InternetSchool.Controllers
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(int id)
         {
-            var data = await service.GetSchoolById(id);
+            var data = await _service.GetById(id);
             if (data != null)
             {
                 return Ok(data);
@@ -39,7 +39,7 @@ namespace InternetSchool.Controllers
         [HttpGet("GetByName")]
         public async Task<IActionResult> GetByName(string name)
         {
-            var data = await service.GetSchoolByName(name);
+            var data = await _service.GetByName(name);
             if (data != null)
             {
                 return Ok(data);
@@ -47,24 +47,24 @@ namespace InternetSchool.Controllers
             return NoContent();
         }
         [Authorize]
-        [RequiresClaim(IdentityData.AdminUserClaimName,"true")]
+        [RequiresClaim(IdentityData.AdminUserClaimName, "true")]
         [HttpPost("action")]
-        public async Task<IActionResult> PostSchool(CreateSchoolDTO group)
+        public async Task<IActionResult> Post(CreateSchoolDTO group)
         {
-            var data = await service.PostSchool(group);
-            return data ? Ok(data) : BadRequest();
+            var data = await _service.Post(group);
+            return Ok(data);
         }
-        [HttpDelete("DeleteSchool")]
-        public async Task<IActionResult> DeleteSchool(int id)
+        [HttpDelete("Delete")]
+        public async Task<IActionResult> Delete(int id)
         {
-            var data = await service.DeleteSchool(id);
+            var data = await _service.Delete(id);
             return data ? Ok(data) : BadRequest();
         }
         [HttpPut("Update")]
-        public async Task<IActionResult> UpdateSchool(int id, CreateSchoolDTO group)
+        public async Task<IActionResult> Update(int id, CreateSchoolDTO DTO)
         {
-            var data = await service.UpdateSchool(group, id);
-            return data ? Ok(data) : BadRequest();
+            var data = await _service.Update(DTO, id);
+            return Ok(data);
         }
     }
 }

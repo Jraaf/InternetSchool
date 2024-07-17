@@ -14,12 +14,12 @@ public class TeacherRepository : Repo<Teacher, int>, ITeacherRepository
     {
         this.context = context;
     }
-    public async Task<List<Teacher>> GetTeacherByName(string teacherName)
+    public async Task<List<Teacher>> GetByName(string name)
     {
         try
         {
             var res = await (from s in context.Teachers
-                             where s.Name == teacherName
+                             where s.Name == name
                              select s).ToListAsync();
             return res;
         }

@@ -10,6 +10,7 @@ namespace InternetScool.BLL.Service.Interfaces
     {
         public Task<List<GroupDTO>> GetAll();
         public Task<GroupDTO> GetById(int Id);
+        public Task<List<GroupDTO>> GetByName(string Name);
         public Task<GroupDTO> Post(CreateGroupDTO DTO);
         public Task<bool> Delete(int Id);
         public Task<GroupDTO > Update(CreateGroupDTO CreateDTO, int Id);

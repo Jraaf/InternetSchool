@@ -15,7 +15,7 @@ public class StudentRepository : Repo<Student, int>, IStudentRepository
         this.context = context;
     }
 
-    public async Task<List<Student>> GetStudentByName(string name)
+    public async Task<List<Student>> GetByName(string name)
     {
         try
         {

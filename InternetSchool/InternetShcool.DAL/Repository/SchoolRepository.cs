@@ -16,12 +16,12 @@ public class SchoolRepository : Repo<School, int>, ISchoolRepository
     }
 
 
-    public async Task<List<School>> GetSchoolByName(string schoolName)
+    public async Task<List<School>> GetByName(string name)
     {
         try
         {
             var res = await (from s in context.Schools
-                             where s.Name == schoolName
+                             where s.Name == name
                              select s).ToListAsync();
             return res;
         }

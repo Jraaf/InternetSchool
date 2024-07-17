@@ -1,22 +1,23 @@
 ﻿using InternetScool.BLL.Service.Interfaces;
 using InternetScool.Common.DTO;
 using Microsoft.AspNetCore.Mvc;
+using ServiceStack;
 
 namespace InternetSchool.Controllers
 {
-    [Route("api/[controller]")]
+    [Microsoft.AspNetCore.Components.Route("api/[controller]")]
     [ApiController]
     public class TeacherController : ControllerBase
     {
-        private readonly ITeacherService service;
+        private readonly ITeacherService _service;
         public TeacherController(ITeacherService service)
         {
-            this.service = service;
+            _service = service;
         }
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
-            var data = await service.GetTeachers();
+            var data = await _service.GetAll();
             if (data != null)
             {
                 return Ok(data);
@@ -26,40 +27,40 @@ namespace InternetSchool.Controllers
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(int id)
         {
-            var data = await service.GetTeacherById(id);
+            var data = await _service.GetById(id);
             if (data != null)
             {
                 return Ok(data);
             }
             return NoContent();
         }
-        //[HttpGet("GetByName")]
-        //public async Task<IActionResult> GetByName(string name)
-        //{
-        //    var data = await service.GetTeacherByName(name);
-        //    if (data != null)
-        //    {
-        //        return Ok(data);
-        //    }
-        //    return NoContent();
-        //}
+        [HttpGet("GetByName")]
+        public async Task<IActionResult> GetByName(string name)
+        {
+            var data = await _service.GetByName(name);
+            if (data != null)
+            {
+                return Ok(data);
+            }
+            return NoContent();
+        }
         [HttpPost("PostTeacher")]
         public async Task<IActionResult> PostTeacher(CreateTeacherDTO teacher)
         {
-            var data = await service.PostTeacher(teacher);
-            return data ? Ok(data) : BadRequest();
+            var data = await _service.Post(teacher);
+            return Ok(data);
         }
         [HttpDelete("DeleteTeacher")]
         public async Task<IActionResult> DeleteTeacher(int id)
         {
-            var data = await service.DeleteTeacherById(id);
+            var data = await _service.Delete(id);
             return data ? Ok(data) : BadRequest();
         }
         [HttpPut("Update")]
-        public async Task<IActionResult> UpdateTeacher(int id, CreateTeacherDTO teacher)
+        public async Task<IActionResult> UpdateTeacher(int Id, CreateTeacherDTO DTO)
         {
-            var data = await service.UpdateTeacher(id, teacher);
-            return data ? Ok(data) : BadRequest();
+            var data = await _service.Update(DTO,Id);
+            return Ok(data);
         }
     }
 }

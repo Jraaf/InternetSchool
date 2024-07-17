@@ -8,15 +8,15 @@ namespace InternetSchool.Controllers
     [ApiController]
     public class SubjectController : ControllerBase
     {
-        private readonly ISubjectService service;
+        private readonly ISubjectService _service;
         public SubjectController(ISubjectService service)
         {
-            this.service = service;
+            this._service = service;
         }
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
-            var data = await service.GetSubjects();
+            var data = await _service.GetAll();
             if (data != null)
             {
                 return Ok(data);
@@ -26,7 +26,7 @@ namespace InternetSchool.Controllers
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(int id)
         {
-            var data = await service.GetSubjectById(id);
+            var data = await _service.GetById(id);
             if (data != null)
             {
                 return Ok(data);
@@ -36,7 +36,7 @@ namespace InternetSchool.Controllers
         [HttpGet("GetByName")]
         public async Task<IActionResult> GetByName(string name)
         {
-            var data = await service.GetSubjectByName(name);
+            var data = await _service.GetByName(name);
             if (data != null)
             {
                 return Ok(data);
@@ -44,22 +44,22 @@ namespace InternetSchool.Controllers
             return NoContent();
         }
         [HttpPost("PostSubject")]
-        public async Task<IActionResult> PostSubject(CreateSubjectDTO subject)
+        public async Task<IActionResult> Post(CreateSubjectDTO subject)
         {
-            var data = await service.PostSubject(subject);
-            return data ? Ok(data) : BadRequest();
+            var data = await _service.Post(subject);
+            return Ok(data);
         }
         [HttpDelete("DeleteSubject")]
         public async Task<IActionResult> DeleteSubject(int id)
         {
-            var data = await service.DeleteSubjectById(id);
+            var data = await _service.Delete(id);
             return data ? Ok(data) : BadRequest();
         }
         [HttpPut("Update")]
-        public async Task<IActionResult> UpdateSubject(int id, CreateSubjectDTO subject)
+        public async Task<IActionResult> UpdateSubject(int id, CreateSubjectDTO DTO)
         {
-            var data = await service.UpdateSubject(id, subject);
-            return data ? Ok(data) : BadRequest();
+            var data = await _service.Update(DTO, id);
+            return Ok(data);
         }
     }
 }

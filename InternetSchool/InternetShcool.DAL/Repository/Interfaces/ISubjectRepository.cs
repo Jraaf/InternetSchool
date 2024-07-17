@@ -5,5 +5,5 @@ namespace InternetShcool.DAL.Repository.Interfaces;
 
 public interface ISubjectRepository: IRepo<Subject, int>
 {
-    Task<List<Subject>> GetSubjectByName(string groupName);
+    Task<List<Subject>> GetByName(string name);
 }

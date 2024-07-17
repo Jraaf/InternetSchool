@@ -65,5 +65,15 @@ namespace InternetScool.BLL.Service
 
             throw new NotFoundException(Id);
         }
+
+        public async Task<List<StudentDTO>> GetByName(string Name)
+        {
+            var data = await _repo.GetByName(Name);
+            if (data != null)
+            {
+                return _mapper.Map<List<StudentDTO>>(data);
+            }
+            throw new NotFoundException(Name);
+        }
     }
 }

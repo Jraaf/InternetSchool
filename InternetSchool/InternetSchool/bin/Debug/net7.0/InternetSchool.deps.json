@@ -451,6 +451,14 @@
           }
         }
       },
+      "ServiceStack.Interfaces/8.2.2": {
+        "runtime": {
+          "lib/net6.0/ServiceStack.Interfaces.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "8.2.2.0"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/6.5.0": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "6.0.5",
@@ -684,7 +692,8 @@
           "Microsoft.EntityFrameworkCore": "7.0.14",
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.14",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.14",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.14"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.14",
+          "ServiceStack.Interfaces": "8.2.2"
         },
         "runtime": {
           "InternetScool.BLL.dll": {}
@@ -1020,6 +1029,13 @@
       "sha512": "sha512-KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
+    },
+    "ServiceStack.Interfaces/8.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KpQT8tH+d2dPksdGhuLdmBySsd8c8XInSsh6sgdZ/E74PBn/Yay4HBveWXfhiIN7asSXV32IjBw6FvHtWAtv0A==",
+      "path": "servicestack.interfaces/8.2.2",
+      "hashPath": "servicestack.interfaces.8.2.2.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.5.0": {
       "type": "package",
