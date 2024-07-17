@@ -1,6 +1,7 @@
-﻿using InternetSchool.Identity;
+﻿
 using InternetScool.BLL.Service.Interfaces;
 using InternetScool.Common.DTO;
+using InternetShcool.DAL.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

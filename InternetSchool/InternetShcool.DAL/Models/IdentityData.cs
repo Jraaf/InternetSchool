@@ -1,4 +1,4 @@
-﻿namespace InternetSchool.Identity;
+﻿namespace InternetShcool.DAL.Models;
 
 public class IdentityData
 {

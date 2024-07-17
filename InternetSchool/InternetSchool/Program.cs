@@ -1,10 +1,9 @@
-using AutoMapper;
-using InternetSchool.Identity;
 using InternetSchool.Swagger;
 using InternetScool.BLL.Profiles;
 using InternetScool.BLL.Service;
 using InternetScool.BLL.Service.Interfaces;
 using InternetShcool.DAL.EF;
+using InternetShcool.DAL.Models;
 using InternetShcool.DAL.Repository;
 using InternetShcool.DAL.Repository.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
