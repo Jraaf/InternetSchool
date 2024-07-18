@@ -1,38 +1,20 @@
-using InternetSchool.Swagger;
 using InternetScool.BLL.Profiles;
 using InternetScool.BLL.Service;
 using InternetScool.BLL.Service.Interfaces;
 using InternetShcool.DAL.EF;
-using InternetShcool.DAL.Models;
 using InternetShcool.DAL.Repository;
 using InternetShcool.DAL.Repository.Interfaces;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using Swashbuckle.AspNetCore.SwaggerGen;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddAutoMapper(typeof(GroupProfile));
 // Add services to the container.
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(x =>
-    {
-        x.TokenValidationParameters = new TokenValidationParameters { };
-    });
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy(IdentityData.AdminUserPolicyName, p =>
-        p.RequireClaim(IdentityData.AdminUserClaimName, "true"));
-});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>,ConfigureSwaggerOptions>();
 
 //repositories
 builder.Services.AddScoped<IGroupRepository, GroupRepository>();
@@ -54,7 +36,7 @@ builder.Services.AddDbContext<InternetSchoolDBContext>(options =>
 });
 
 builder.Services.AddAutoMapper(typeof(SchoolProfile));
-
+builder.Services.AddCors();
 
 var app = builder.Build();
 
@@ -64,6 +46,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(c=>c.AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin());
 
 app.UseHttpsRedirection();
 

@@ -1,4 +1,5 @@
 ﻿using InternetSchool.Models;
+using InternetShcool.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace InternetShcool.DAL.EF
@@ -10,6 +11,8 @@ namespace InternetShcool.DAL.EF
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<Student> Students { get; set; }
+        public DbSet<User> Users { get; set; }
+
         public InternetSchoolDBContext(DbContextOptions<InternetSchoolDBContext> options)
             : base(options)
         {

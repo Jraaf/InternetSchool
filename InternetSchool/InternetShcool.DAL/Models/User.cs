@@ -9,7 +9,8 @@ namespace InternetShcool.DAL.Models
     public class User
     {
         public int Id { get; set; }
-        public string Login { get; set; } = string.Empty;
-        public string PasswordHash { get; set; } = string.Empty;
+        public required string Login { get; set; }
+        public required byte[] PasswordHash { get; set; }
+        public required byte[] PasswordSalt { get; set; }
     }
 }

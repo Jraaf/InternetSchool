@@ -1,5 +1,4 @@
-﻿
-using InternetScool.BLL.Service.Interfaces;
+﻿using InternetScool.BLL.Service.Interfaces;
 using InternetScool.Common.DTO;
 using InternetShcool.DAL.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -7,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InternetSchool.Controllers
 {
-    [Authorize]
     [Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
     [ApiController]
     public class SchoolController : ControllerBase
@@ -47,8 +45,6 @@ namespace InternetSchool.Controllers
             }
             return NoContent();
         }
-        [Authorize]
-        [RequiresClaim(IdentityData.AdminUserClaimName, "true")]
         [HttpPost("action")]
         public async Task<IActionResult> Post(CreateSchoolDTO group)
         {
