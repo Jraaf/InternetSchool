@@ -155,6 +155,10 @@
             "ServiceStack.Interfaces": {
               "target": "Package",
               "version": "[8.2.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [

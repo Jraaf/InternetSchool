@@ -1,0 +1,8 @@
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\obj\Debug\net8.0\InternetSchool.csproj.AssemblyReference.cache
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\obj\Debug\net8.0\InternetSchool.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\obj\Debug\net8.0\InternetSchool.AssemblyInfoInputs.cache
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\obj\Debug\net8.0\InternetSchool.AssemblyInfo.cs
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\obj\Debug\net8.0\InternetSchool.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\obj\Debug\net8.0\InternetSchool.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\obj\Debug\net8.0\InternetSchool.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Acer\Desktop\projects\InternetSchool\InternetSchool\InternetSchool\obj\Debug\net8.0\InternetSchool.sourcelink.json
