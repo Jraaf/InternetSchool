@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InternetSchool")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+980de92efb2551b3afa90f94f2db5808443cc032")]
 [assembly: System.Reflection.AssemblyProductAttribute("InternetSchool")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InternetSchool")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

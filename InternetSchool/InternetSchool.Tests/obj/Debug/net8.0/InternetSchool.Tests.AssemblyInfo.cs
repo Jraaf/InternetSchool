@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InternetSchool.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8227f4262d47bbab3e3fb9b60d01b7856289b8b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+980de92efb2551b3afa90f94f2db5808443cc032")]
 [assembly: System.Reflection.AssemblyProductAttribute("InternetSchool.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InternetSchool.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

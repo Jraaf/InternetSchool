@@ -5,11 +5,12 @@ using InternetShcool.DAL.EF;
 using InternetShcool.DAL.Repository;
 using InternetShcool.DAL.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddAutoMapper(typeof(SchoolProfile));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -35,7 +36,7 @@ builder.Services.AddDbContext<InternetSchoolDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("InternetSchoolConnection"));
 });
 
-builder.Services.AddAutoMapper(typeof(SchoolProfile));
+
 builder.Services.AddCors();
 
 var app = builder.Build();
