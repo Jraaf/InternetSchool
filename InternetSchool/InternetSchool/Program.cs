@@ -4,8 +4,10 @@ using InternetScool.BLL.Service.Interfaces;
 using InternetShcool.DAL.EF;
 using InternetShcool.DAL.Repository;
 using InternetShcool.DAL.Repository.Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using AutoMapper;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,13 +32,26 @@ builder.Services.AddScoped<ISchoolService, SchoolService>();
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<ISubjectService, SubjectService>();
 builder.Services.AddScoped<ITeacherService, TeacherService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
+
 
 builder.Services.AddDbContext<InternetSchoolDBContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("InternetSchoolConnection"));
 });
 
-
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        var tokenKey = builder.Configuration["TokenKey"] ?? throw new Exception("Key not found");
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenKey)),
+            ValidateIssuer = false,
+            ValidateAudience = false
+        };
+    });
 builder.Services.AddCors();
 
 var app = builder.Build();
