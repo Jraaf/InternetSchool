@@ -202,3 +202,15 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+/InternetSchool/InternetSchool/obj/Debug/net8.0/InternetSchool.AssemblyInfo.cs
+/InternetSchool/InternetScool.BLL/bin/Debug/net8.0/InternetSchool.Common.dll
+/InternetSchool/InternetScool.BLL/bin/Debug/net8.0/InternetSchool.Common.pdb
+/InternetSchool/InternetScool.BLL/bin/Debug/net8.0/InternetScool.BLL.dll
+/InternetSchool/InternetShcool.DAL/obj/Debug/net8.0/InternetShcool.DAL.csproj.AssemblyReference.cache
+/InternetSchool/InternetShcool.DAL/bin/Debug/net8.0/InternetSchool.Common.pdb
+/InternetSchool/InternetShcool.DAL/bin/Debug/net8.0/InternetShcool.DAL.dll
+/InternetSchool/InternetShcool.DAL/bin/Debug/net8.0/InternetShcool.DAL.pdb
+/InternetSchool/.vs/InternetSchool/v17/.suo
+*.vsidx
+/InternetSchool/.vs/ProjectEvaluation/internetschool.projects.v7.bin
+/InternetSchool/.vs/ProjectEvaluation/internetschool.metadata.v7.bin
