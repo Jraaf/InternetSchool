@@ -12,16 +12,17 @@ import {AccountService} from "../services/account.service";
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  private accountService = inject(AccountService);
-  loggedIn:boolean = false;
+  accountService = inject(AccountService);
   model:any={};
   login() {
     this.accountService.login(this.model).subscribe({
       next:response =>{
       console.log(response);
-      this.loggedIn = true;
     },
       error: error => {console.log(error);},
     });
+  }
+  logout(){
+    this.accountService.logout();
   }
 }

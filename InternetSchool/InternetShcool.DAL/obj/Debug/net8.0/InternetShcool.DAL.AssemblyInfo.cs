@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InternetShcool.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc1bed6bc52fa54923d293b68a03e78fa2ccbc1b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4950b0066989c7a010882e4c7bf1f462a72a8b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("InternetShcool.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InternetShcool.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

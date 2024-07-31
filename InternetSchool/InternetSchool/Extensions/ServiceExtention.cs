@@ -5,13 +5,14 @@ using InternetShcool.DAL.EF;
 using InternetShcool.DAL.Repository.Interfaces;
 using InternetShcool.DAL.Repository;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 namespace InternetSchool.Extensions;
 
 public static class ServiceExtention
 {
     /// <summary>
-    /// Adds repositoriries, services and dbcontext
+    /// Adds repositoriries, services and dbcontext, also configures swagger
     /// </summary>
     /// <param name="services"></param>
     /// <param name="config"></param>
@@ -23,7 +24,42 @@ public static class ServiceExtention
         services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         services.AddEndpointsApiExplorer();
-        services.AddSwaggerGen();
+        services.AddSwaggerGen(swagger =>
+        {
+            //This is to generate the Default UI of Swagger Documentation
+            swagger.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Version = "v1",
+                Title = "JWT Token Authentication API",
+                Description = ".NET 8 Web API"
+            });
+            // To Enable authorization using Swagger (JWT)
+            swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+            {
+                Name = "Authorization",
+                Type = SecuritySchemeType.ApiKey,
+                Scheme = "Bearer",
+                BearerFormat = "JWT",
+                In = ParameterLocation.Header,
+                Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
+            });
+            swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                          new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "Bearer"
+                                }
+                            },
+                            new string[] {}
+
+                    }
+                });
+        });
+
 
 
         services.AddAutoMapper(typeof(SchoolProfile));

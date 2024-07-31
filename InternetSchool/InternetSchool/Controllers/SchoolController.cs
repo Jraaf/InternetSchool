@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InternetSchool.Controllers
 {
-    [Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class SchoolController : ControllerBase
     {
