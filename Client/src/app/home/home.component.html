@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div class="container mt-5">
+  <div class="text-center">
+    @if(!registerMode){
+      <button (click)="registerToggle()" class="p-button">Register</button>
+      <button class="p-button">Login</button>
+    }
+    @else{
+      <div class="container">
+        <div class="row-auto justify-center">
+          <div class="col-end-4">
+            <p>register form</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

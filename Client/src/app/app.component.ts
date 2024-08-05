@@ -5,12 +5,12 @@ import {NavComponent} from "./nav/nav.component";
 import {LoginComponent} from "./login/login.component";
 import {School} from "./models/school";
 import {AccountService} from "./services/account.service";
-import {User} from "./models/user";
+import {HomeComponent} from "./home/home.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavComponent, LoginComponent],
+  imports: [RouterOutlet, NavComponent, LoginComponent, HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
