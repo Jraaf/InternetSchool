@@ -1,5 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, inject, input, Input, output} from '@angular/core';
 import {FormsModule} from "@angular/forms";
+import {School} from "../models/school";
+import {AccountService} from "../services/account.service";
 
 @Component({
   selector: 'app-register',
@@ -9,14 +11,22 @@ import {FormsModule} from "@angular/forms";
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  private accountService = inject(AccountService);
+  schools = input.required<School[]>();
+  protected readonly model: any = {};
+  cancelRegister = output<boolean>();
 
   register() {
-
+    console.log(this.model);
+    this.accountService.register(this.model)
+      .subscribe({
+        next:response =>{ console.log(response);},
+        error: error => {console.log(error);},
+        }
+      );
   }
 
-  protected readonly model:any;
-
   cancel() {
-
+    this.cancelRegister.emit(false);
   }
 }

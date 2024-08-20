@@ -15,13 +15,9 @@ import {HomeComponent} from "./home/home.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  http = inject(HttpClient);
   private accountService = inject(AccountService);
-  title = 'SchoolsLMS';
-  schools:School[] = [];
 
   ngOnInit(): void {
-    this.getShools();
     this.setCurrentUser();
   }
 
@@ -30,13 +26,5 @@ export class AppComponent implements OnInit {
      if(!userString) return;
      const user = JSON.parse(userString);
      this.accountService.currentUser.set(user);
-  }
-
-  getShools(){
-    this.http.get<School[]>('https://localhost:7232/api/School/GetAll').subscribe({
-      next: response => {this.schools = response},
-      error: error => {console.log(error);},
-      complete: ()=>{console.log('fetching schools completed')}
-    })
   }
 }
