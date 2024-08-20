@@ -1,17 +1,43 @@
-<div class="container mt-5">
-  <div class="text-center">
+<div class="relative min-h-screen bg-gradient-to-br from-blue-300 via-blue-400 to-yellow-300 p-8">
+  <!-- Handwritten formulas -->
+  <div class="absolute inset-0 pointer-events-none">
+    <svg class="absolute top-0 left-0 w-full h-full opacity-30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <text x="-50" y="10" font-family="'Caveat', cursive" font-size="16" fill="rgba(255,255,255,0.3)" transform="rotate(-15 10,20)">E = mc²</text>
+      <text x="-20" y="50" font-family="'Caveat', cursive" font-size="16" fill="rgba(255,255,255,0.3)" transform="rotate(10 50,30)">∫ x² dx</text>
+      <text x="20" y="50" font-family="'Caveat', cursive" font-size="16" fill="rgba(255,255,255,0.3)" transform="rotate(-5 20,50)">Δx = v₀t + ½at²</text>
+      <text x="60" y="50" font-family="'Caveat', cursive" font-size="16" fill="rgba(255,255,255,0.3)" transform="rotate(20 60,50)">a² + b² = c²</text>
+      <text x="-40" y="80" font-family="'Caveat', cursive" font-size="16" fill="rgba(255,255,255,0.3)" transform="rotate(-10 40,80)">log(x) = y</text>
+      <text x="80" y="20" font-family="'Caveat', cursive" font-size="16" fill="rgba(255,255,255,0.3)" transform="rotate(15 100,50)">∂f/∂x</text>
+      <!-- Add more formulas as needed -->
+    </svg>
+  </div>
+
+  <!-- Main content -->
+  <div class="relative text-center bg-white p-8 rounded-3xl shadow-2xl max-w-lg w-full mx-auto mt-24">
     @if(!registerMode){
-      <button (click)="registerToggle()" class="p-button">Register</button>
-      <button class="p-button">Login</button>
+      <div class="flex flex-col items-center space-y-8">
+        <h1 class="text-5xl font-bold text-gray-900 mb-4">Welcome to Your Learning Platform</h1>
+        <p class="text-lg text-gray-600 mb-8">Seamlessly access your courses and resources. Start by choosing an option below.</p>
+        <div class="flex space-x-6">
+          <button
+            (click)="registerToggle()"
+            class="bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 text-white font-semibold py-3 px-10 rounded-full shadow-xl ring-2 ring-transparent ring-offset-4 ring-offset-gray-200 transform transition-transform hover:scale-110 hover:ring-indigo-300 hover:ring-opacity-40">
+            Register
+          </button>
+
+          <button
+            class="bg-gradient-to-r from-teal-500 via-green-500 to-lime-500 text-white font-semibold py-3 px-10 rounded-full shadow-xl ring-2 ring-transparent ring-offset-4 ring-offset-gray-200 transform transition-transform hover:scale-110 hover:ring-teal-300 hover:ring-opacity-40">
+            Login
+          </button>
+        </div>
+      </div>
     }
     @else{
-      <div class="container">
-        <div class="row-auto justify-center">
-          <div class="col-end-4">
-            <app-register [schools]="this.schools"
-            (cancelRegister)="cancelRegisterMode($event)"></app-register>
-          </div>
-        </div>
+      <div class="flex justify-center items-center h-full">
+        <app-register [schools]="this.schools"
+                      (cancelRegister)="cancelRegisterMode($event)"
+                      class="p-8 bg-white shadow-lg rounded-3xl border border-gray-300 max-w-md w-full">
+        </app-register>
       </div>
     }
   </div>
