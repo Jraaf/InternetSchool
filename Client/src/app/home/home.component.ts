@@ -3,19 +3,24 @@ import {RegisterComponent} from "../register/register.component";
 import {School} from "../models/school";
 import {HttpClient} from "@angular/common/http";
 import {LoginComponent} from "../login/login.component";
+import {NavComponent} from "../nav/nav.component";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    NavComponent,
+    NgForOf
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
   registerMode = false;
+  authenticationStatus = false;
   loginMode = false;
   http = inject(HttpClient);
   schools!: School[];
@@ -34,8 +39,12 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
     this.getShools();
   }
-  cancelRegisterMode(value:boolean){
+  RegisterMode(value:boolean){
     this.registerMode = value;
+  }
+
+  RegisterStatus(value:boolean){
+    this.authenticationStatus = value;
   }
 
   loginToggle() {

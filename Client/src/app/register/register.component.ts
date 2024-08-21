@@ -2,7 +2,7 @@ import {Component, inject, input, output} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {School} from "../models/school";
 import {AccountService} from "../services/account.service";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -13,10 +13,11 @@ import {RouterLink} from "@angular/router";
 })
 export class RegisterComponent {
   private accountService = inject(AccountService);
-  isRegistered = false;
+  router = inject(Router);
   schools = input.required<School[]>();
   protected readonly model: any = {};
-  cancelRegister = output<boolean>();
+  RegisterStatus = output<boolean>();
+  RegisterMode = output<boolean>();
 
   register() {
     console.log(this.model);
@@ -24,14 +25,15 @@ export class RegisterComponent {
       .subscribe({
         next:response =>{
           console.log(response);
-          this.isRegistered = true;
+          this.RegisterStatus.emit(true);
           },
         error: error => {console.log(error);},
         }
       );
+    this.router.navigateByUrl("/teachers")
   }
 
   cancel() {
-    this.cancelRegister.emit(false);
+    this.RegisterMode.emit(false);
   }
 }
