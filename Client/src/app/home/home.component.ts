@@ -2,18 +2,21 @@ import {Component, inject, OnInit} from '@angular/core';
 import {RegisterComponent} from "../register/register.component";
 import {School} from "../models/school";
 import {HttpClient} from "@angular/common/http";
+import {LoginComponent} from "../login/login.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
   registerMode = false;
+  loginMode = false;
   http = inject(HttpClient);
   schools!: School[];
 
@@ -33,5 +36,9 @@ export class HomeComponent implements OnInit{
   }
   cancelRegisterMode(value:boolean){
     this.registerMode = value;
+  }
+
+  loginToggle() {
+    this.loginMode = !this.loginMode;
   }
 }

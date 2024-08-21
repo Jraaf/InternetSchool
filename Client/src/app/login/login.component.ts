@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, output} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {AccountService} from "../services/account.service";
 
@@ -14,6 +14,7 @@ import {AccountService} from "../services/account.service";
 export class LoginComponent {
   accountService = inject(AccountService);
   model:any={};
+  cancel = output<boolean>();
   login() {
     this.accountService.login(this.model).subscribe({
       next:response =>{
@@ -24,5 +25,8 @@ export class LoginComponent {
   }
   logout(){
     this.accountService.logout();
+  }
+  cancelClick(){
+    this.cancel.emit(false);
   }
 }

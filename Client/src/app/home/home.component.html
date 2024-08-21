@@ -14,7 +14,7 @@
 
   <!-- Main content -->
   <div class="relative text-center bg-white p-8 rounded-3xl shadow-2xl max-w-lg w-full mx-auto mt-24">
-    @if(!registerMode){
+    @if(!registerMode || !loginMode){
       <div class="flex flex-col items-center space-y-8">
         <h1 class="text-5xl font-bold text-gray-900 mb-4">Welcome to Your Learning Platform</h1>
         <p class="text-lg text-gray-600 mb-8">Seamlessly access your courses and resources. Start by choosing an option below.</p>
@@ -26,18 +26,24 @@
           </button>
 
           <button
+            (click)="loginToggle()"
             class="bg-gradient-to-r from-teal-500 via-green-500 to-lime-500 text-white font-semibold py-3 px-10 rounded-full shadow-xl ring-2 ring-transparent ring-offset-4 ring-offset-gray-200 transform transition-transform hover:scale-110 hover:ring-teal-300 hover:ring-opacity-40">
             Login
           </button>
         </div>
       </div>
-    }
-    @else{
+    } @else if (registerMode){
       <div class="flex justify-center items-center h-full">
         <app-register [schools]="this.schools"
                       (cancelRegister)="cancelRegisterMode($event)"
                       class="p-8 bg-white shadow-lg rounded-3xl border border-gray-300 max-w-md w-full">
         </app-register>
+      </div>
+    } @else if (loginMode){
+      <div class="flex justify-center items-center h-full">
+        <app-login 
+                      class="p-8 bg-white shadow-lg rounded-3xl border border-gray-300 max-w-md w-full">
+        </app-login>
       </div>
     }
   </div>
