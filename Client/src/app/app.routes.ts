@@ -3,7 +3,6 @@ import {HomeComponent} from "./home/home.component";
 import {RegisterComponent} from "./register/register.component";
 import {TeacherListComponent} from "./members/teacher-list/teacher-list.component";
 import {TeacherInfoComponent} from "./members/teacher-info/teacher-info.component";
-import {MessagesComponent} from "./messages/messages.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
