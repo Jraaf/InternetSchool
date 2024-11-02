@@ -20,8 +20,6 @@ jobs:
         dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
     - name: Install dotnet-ef tool
       run: dotnet tool install --global dotnet-ef
-    - name: Add .NET tools to PATH
-      run: echo "::add-path::${HOME}/.dotnet/tools"
     - name: Restore
       run: dotnet restore "${{ env.WORKING_DIRECTORY }}"
     - name: Build
