@@ -27,7 +27,7 @@ jobs:
     - name: Apply EF Core Migrations
       env:
           ConnectionStrings__DefaultConnection: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
-      run: dotnet ef database update --project "${{ env.WORKING_DIRECTORY }}"
+      run: dotnet ef database update
     - name: Publish
       run: dotnet publish "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
     - name: Publish Artifacts
