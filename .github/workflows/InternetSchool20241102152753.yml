@@ -10,8 +10,16 @@ env:
   DOTNET_CORE_VERSION: 8.0.x
   WORKING_DIRECTORY: InternetSchool
 jobs:
+  setting:
+    runs-on: windows-latest
+    steps:
+    - name: Apply EF Core Migrations
+      env:
+          ConnectionStrings__DefaultConnection: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
+      run: dotnet ef database update --project "${{ env.WORKING_DIRECTORY }}
   build:
     runs-on: windows-latest
+    needs: setting
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET SDK
@@ -24,10 +32,6 @@ jobs:
       run: dotnet build "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
     - name: Test
       run: dotnet test "${{ env.WORKING_DIRECTORY }}" --no-build
-    - name: Apply EF Core Migrations
-      env:
-          ConnectionStrings__DefaultConnection: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
-      run: dotnet ef database update --project "${{ env.WORKING_DIRECTORY }}
     - name: Publish
       run: dotnet publish "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
     - name: Publish Artifacts
