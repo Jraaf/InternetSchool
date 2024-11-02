@@ -26,11 +26,11 @@ export class RegisterComponent {
         next:response =>{
           console.log(response);
           this.RegisterStatus.emit(true);
+          this.router.navigateByUrl("/teachers");
           },
         error: error => {console.log(error);},
         }
       );
-    this.router.navigateByUrl("/teachers")
   }
 
   cancel() {
