@@ -5738,11 +5738,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Acer\\Desktop\\projects\\InternetSchool\\InternetSchool\\InternetSchool.Common\\InternetSchool.Common.csproj",
+      "projectUniqueName": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetSchool.Common\\InternetSchool.Common.csproj",
       "projectName": "InternetSchool.Common",
-      "projectPath": "C:\\Users\\Acer\\Desktop\\projects\\InternetSchool\\InternetSchool\\InternetSchool.Common\\InternetSchool.Common.csproj",
+      "projectPath": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetSchool.Common\\InternetSchool.Common.csproj",
       "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Acer\\Desktop\\projects\\InternetSchool\\InternetSchool\\InternetSchool.Common\\obj\\",
+      "outputPath": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetSchool.Common\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5759,8 +5759,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Acer\\Desktop\\projects\\InternetSchool\\InternetSchool\\InternetSchool.Tests\\InternetSchool.Tests.csproj": {
-              "projectPath": "C:\\Users\\Acer\\Desktop\\projects\\InternetSchool\\InternetSchool\\InternetSchool.Tests\\InternetSchool.Tests.csproj"
+            "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetSchool.Tests\\InternetSchool.Tests.csproj": {
+              "projectPath": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetSchool.Tests\\InternetSchool.Tests.csproj"
             }
           }
         }

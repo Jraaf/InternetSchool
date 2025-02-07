@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IReyUr5LBQ5YWUCK5UOHjqOZDXIXgBQoHhnoAtpyGrLWqvo29wMFed1H2gilAR9YnYqaUarIEnmjsEmfQgwmzw==",
+  "dgSpecHash": "Mx2xXhO1u0G7hUD4kL6g3liaZ/4v1b3BphBpL+vJhF8Ew8HhwkeYz7jLPuQBk0IhXdRvIEQ5LpWEnJ9UwCXFsQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Acer\\Desktop\\projects\\InternetSchool\\InternetSchool\\InternetScool.BLL\\InternetScool.BLL.csproj",
+  "projectFilePath": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetScool.BLL\\InternetScool.BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Acer\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z8kKgmD+gyt65YkiPHVhbjUuevvwzlPzBMLb5WWjEkD/8rA77x3hln/IZRHUYqC4LMN0gPeV3COjYptUr0Ku0Q==",
+  "dgSpecHash": "s7TANzh/3hOtuwfqRQxNWOln5frmkEqF8x1bg5uP+tEU/42ve8DPoz+NFd+wut9tbt66gGW5iLVMqTqQZ1/xNA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Acer\\Desktop\\projects\\InternetSchool\\InternetSchool\\InternetSchool.Common\\InternetSchool.Common.csproj",
+  "projectFilePath": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetSchool.Common\\InternetSchool.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.7\\microsoft.aspnetcore.authentication.jwtbearer.8.0.7.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.codecoverage\\17.6.0\\microsoft.codecoverage.17.6.0.nupkg.sha512",
