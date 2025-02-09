@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -36,7 +37,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InternetScool.BLL\InternetScool.BLL.csproj" />
-    <ProjectReference Include="..\InternetShcool.DAL\InternetShcool.DAL.csproj" />
+    <ProjectReference Include="..\InternetSchool.DAL\InternetSchool.DAL.csproj" />
   </ItemGroup>
 
 </Project>

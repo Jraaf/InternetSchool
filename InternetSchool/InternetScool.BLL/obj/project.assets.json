@@ -3113,21 +3113,7 @@
           "bin/placeholder/InternetSchool.Common.dll": {}
         }
       },
-      "InternetSchool.Tests/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Microsoft.NET.Test.Sdk": "17.6.0",
-          "xunit": "2.4.2"
-        },
-        "compile": {
-          "bin/placeholder/InternetSchool.Tests.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/InternetSchool.Tests.dll": {}
-        }
-      },
-      "InternetShcool.DAL/1.0.0": {
+      "InternetSchool.DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
@@ -3140,10 +3126,24 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.7"
         },
         "compile": {
-          "bin/placeholder/InternetShcool.DAL.dll": {}
+          "bin/placeholder/InternetSchool.DAL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/InternetShcool.DAL.dll": {}
+          "bin/placeholder/InternetSchool.DAL.dll": {}
+        }
+      },
+      "InternetSchool.Tests/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.NET.Test.Sdk": "17.6.0",
+          "xunit": "2.4.2"
+        },
+        "compile": {
+          "bin/placeholder/InternetSchool.Tests.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InternetSchool.Tests.dll": {}
         }
       }
     }
@@ -9150,22 +9150,22 @@
       "path": "../InternetSchool.Common/InternetSchool.Common.csproj",
       "msbuildProject": "../InternetSchool.Common/InternetSchool.Common.csproj"
     },
+    "InternetSchool.DAL/1.0.0": {
+      "type": "project",
+      "path": "../InternetSchool.DAL/InternetSchool.DAL.csproj",
+      "msbuildProject": "../InternetSchool.DAL/InternetSchool.DAL.csproj"
+    },
     "InternetSchool.Tests/1.0.0": {
       "type": "project",
       "path": "../InternetSchool.Tests/InternetSchool.Tests.csproj",
       "msbuildProject": "../InternetSchool.Tests/InternetSchool.Tests.csproj"
-    },
-    "InternetShcool.DAL/1.0.0": {
-      "type": "project",
-      "path": "../InternetShcool.DAL/InternetShcool.DAL.csproj",
-      "msbuildProject": "../InternetShcool.DAL/InternetShcool.DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "AutoMapper >= 13.0.1",
       "InternetSchool.Common >= 1.0.0",
-      "InternetShcool.DAL >= 1.0.0",
+      "InternetSchool.DAL >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.7",
       "Microsoft.EntityFrameworkCore >= 8.0.7",
       "Microsoft.EntityFrameworkCore.Abstractions >= 8.0.7",
@@ -9183,11 +9183,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetScool.BLL\\InternetScool.BLL.csproj",
+      "projectUniqueName": "C:\\Users\\Acer\\RiderProjects\\InternetSchool\\InternetSchool\\InternetScool.BLL\\InternetScool.BLL.csproj",
       "projectName": "InternetScool.BLL",
-      "projectPath": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetScool.BLL\\InternetScool.BLL.csproj",
+      "projectPath": "C:\\Users\\Acer\\RiderProjects\\InternetSchool\\InternetSchool\\InternetScool.BLL\\InternetScool.BLL.csproj",
       "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetScool.BLL\\obj\\",
+      "outputPath": "C:\\Users\\Acer\\RiderProjects\\InternetSchool\\InternetSchool\\InternetScool.BLL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9204,11 +9204,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetSchool.Common\\InternetSchool.Common.csproj": {
-              "projectPath": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetSchool.Common\\InternetSchool.Common.csproj"
+            "C:\\Users\\Acer\\RiderProjects\\InternetSchool\\InternetSchool\\InternetSchool.Common\\InternetSchool.Common.csproj": {
+              "projectPath": "C:\\Users\\Acer\\RiderProjects\\InternetSchool\\InternetSchool\\InternetSchool.Common\\InternetSchool.Common.csproj"
             },
-            "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetShcool.DAL\\InternetShcool.DAL.csproj": {
-              "projectPath": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetShcool.DAL\\InternetShcool.DAL.csproj"
+            "C:\\Users\\Acer\\RiderProjects\\InternetSchool\\InternetSchool\\InternetSchool.DAL\\InternetSchool.DAL.csproj": {
+              "projectPath": "C:\\Users\\Acer\\RiderProjects\\InternetSchool\\InternetSchool\\InternetSchool.DAL\\InternetSchool.DAL.csproj"
             }
           }
         }
@@ -9217,7 +9217,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -9279,12 +9285,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.11, 8.0.11]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.11, 8.0.11]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.11, 8.0.11]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using InternetScool.BLL.Service.Interfaces;
 using InternetSchool.Models;
-using InternetShcool.DAL.Repository.Interfaces;
+using InternetSchool.DAL.Repository.Interfaces;
 using InternetScool.Common.DTO;
 using InternetScool.Common.DTO.Out;
 using Microsoft.Identity.Client;

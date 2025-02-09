@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using InternetScool.BLL.Service.Interfaces;
-using InternetShcool.DAL.Repository.Interfaces;
+using InternetSchool.DAL.Repository.Interfaces;
 using InternetSchool.Models;
 using InternetScool.Common.DTO.Out;
 using InternetScool.Common.DTO;

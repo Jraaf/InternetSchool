@@ -1122,7 +1122,10 @@
           "xunit": "2.4.2"
         },
         "runtime": {
-          "InternetSchool.Tests.dll": {}
+          "InternetSchool.Tests.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

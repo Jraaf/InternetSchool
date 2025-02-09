@@ -1,9 +1,9 @@
 ﻿using InternetScool.BLL.Profiles;
 using InternetScool.BLL.Service.Interfaces;
 using InternetScool.BLL.Service;
-using InternetShcool.DAL.EF;
-using InternetShcool.DAL.Repository.Interfaces;
-using InternetShcool.DAL.Repository;
+using InternetSchool.DAL.EF;
+using InternetSchool.DAL.Repository.Interfaces;
+using InternetSchool.DAL.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -81,7 +81,7 @@ public static class ServiceExtention
 
         services.AddDbContext<InternetSchoolDBContext>(options =>
         {
-            options.UseSqlServer(config.GetConnectionString("InternetSchoolConnection"));
+            options.UseSqlServer(Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection"));
         });
 
         return services;

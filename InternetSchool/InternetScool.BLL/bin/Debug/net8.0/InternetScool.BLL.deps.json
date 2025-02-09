@@ -1716,12 +1716,6 @@
       "System.Text.Json/8.0.4": {
         "dependencies": {
           "System.Text.Encodings.Web": "8.0.0"
-        },
-        "runtime": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.724.31311"
-          }
         }
       },
       "System.Text.RegularExpressions/4.3.0": {
@@ -1868,7 +1862,10 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.7"
         },
         "runtime": {
-          "InternetSchool.Common.dll": {}
+          "InternetSchool.Common.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "InternetSchool.Tests/1.0.0": {
@@ -1877,7 +1874,10 @@
           "xunit": "2.4.2"
         },
         "runtime": {
-          "InternetSchool.Tests.dll": {}
+          "InternetSchool.Tests.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "InternetShcool.DAL/1.0.0": {
@@ -1891,7 +1891,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.7"
         },
         "runtime": {
-          "InternetShcool.DAL.dll": {}
+          "InternetShcool.DAL.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
