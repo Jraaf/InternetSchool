@@ -9,10 +9,24 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using ServiceStack;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbServices(builder.Configuration);
+builder.Services.AddSwaggerServices(builder.Configuration);
+
+
+builder.Configuration.AddEnvironmentVariables();
+var connString = Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection");
+if (string.IsNullOrEmpty(connString))
+{
+    throw new InvalidOperationException("Database connection string is not set.");
+}
+
+builder.Services.AddDbContext<InternetSchoolDBContext>(options =>
+{
+    options.UseSqlServer(connString);
+});
 
 builder.Services.AddIdentityServices(builder.Configuration);
 builder.Services.AddCors();

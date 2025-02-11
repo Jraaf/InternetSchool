@@ -17,7 +17,7 @@ public static class ServiceExtention
     /// <param name="services"></param>
     /// <param name="config"></param>
     /// <returns></returns>
-    public static IServiceCollection AddDbServices(this IServiceCollection services, IConfiguration config)
+    public static IServiceCollection AddSwaggerServices(this IServiceCollection services, IConfiguration config)
     {
         // Add services to the container.
 
@@ -79,10 +79,7 @@ public static class ServiceExtention
         services.AddScoped<ITokenService, TokenService>();
 
 
-        services.AddDbContext<InternetSchoolDBContext>(options =>
-        {
-            options.UseSqlServer(Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection"));
-        });
+
 
         return services;
     }

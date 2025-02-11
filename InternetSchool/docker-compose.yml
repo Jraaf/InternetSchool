@@ -3,6 +3,32 @@ version: '3.4'
 services:
   internetschool:
     image: ${DOCKER_REGISTRY-}internetschool
+    container_name: web_api
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=db;Database=YourDatabase;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True;Encrypt=False;
     build:
       context: .
       dockerfile: InternetSchool/Dockerfile
+    networks:
+      - app-network
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sql_server
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=YourStrong!Passw0rd
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    networks:
+      - app-network
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  sqlserver_data:
