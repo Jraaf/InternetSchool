@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X8q8gE7pceaXvSLLUnaqTFZAr6hW7Gsb6ELVMF43RlbYJJrzirDMqYUx3LDhJxWasIuuOf+C9TSWxUoJiAJAOQ==",
+  "dgSpecHash": "uzoU5LYYpgFzziprhtXNdGFcqVTolQXblX7mGqMIbLO/aQxNJ/6S58SEdUd3AZ6z/ULmTJWfdisPqHFmOCytEw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetSchool\\InternetSchool.csproj",
+  "projectFilePath": "C:\\Users\\Acer\\source\\repos\\InternetSchool\\InternetSchool\\InternetSchool\\InternetSchool.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Acer\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
@@ -53,6 +53,7 @@
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.6.0\\microsoft.testplatform.objectmodel.17.6.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.testplatform.testhost\\17.6.0\\microsoft.testplatform.testhost.17.6.0.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.5\\microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",

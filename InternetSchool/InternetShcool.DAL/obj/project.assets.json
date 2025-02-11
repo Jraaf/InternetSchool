@@ -9132,9 +9132,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetShcool.DAL\\InternetShcool.DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Acer\\source\\repos\\InternetSchool\\InternetSchool\\InternetShcool.DAL\\InternetShcool.DAL.csproj",
       "projectName": "InternetShcool.DAL",
-      "projectPath": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetShcool.DAL\\InternetShcool.DAL.csproj",
+      "projectPath": "C:\\Users\\Acer\\source\\repos\\InternetSchool\\InternetSchool\\InternetShcool.DAL\\InternetShcool.DAL.csproj",
       "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetShcool.DAL\\obj\\",
       "projectStyle": "PackageReference",
@@ -9153,8 +9153,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetSchool.Common\\InternetSchool.Common.csproj": {
-              "projectPath": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetSchool.Common\\InternetSchool.Common.csproj"
+            "C:\\Users\\Acer\\source\\repos\\InternetSchool\\InternetSchool\\InternetSchool.Common\\InternetSchool.Common.csproj": {
+              "projectPath": "C:\\Users\\Acer\\source\\repos\\InternetSchool\\InternetSchool\\InternetSchool.Common\\InternetSchool.Common.csproj"
             }
           }
         }

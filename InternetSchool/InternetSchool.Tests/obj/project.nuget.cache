@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oEfbZ2H+0bNRKQr6VYvS8a+THDtAatTceN75OrT0nh2mRohviwjuXjPqxrAzk/EbLImjjHlqXKDmTJJwW3eRLg==",
+  "dgSpecHash": "vV4sQ5kw/LRe2DKMOhxP8sG7vrwqM5OPpwUKegNJkm2OmufDfAkdtujsLQBNnsHXUCAKTGkI3uOYDx6+mHZA1w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Acer\\Source\\Repos\\InternetSchool\\InternetSchool\\InternetSchool.Tests\\InternetSchool.Tests.csproj",
+  "projectFilePath": "C:\\Users\\Acer\\source\\repos\\InternetSchool\\InternetSchool\\InternetSchool.Tests\\InternetSchool.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Acer\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.codecoverage\\17.6.0\\microsoft.codecoverage.17.6.0.nupkg.sha512",
