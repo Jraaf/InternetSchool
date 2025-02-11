@@ -1,8 +1,8 @@
 ﻿using InternetSchool.Common.DTO;
 using InternetSchool.Common.DTO.Out;
 using InternetScool.BLL.Service.Interfaces;
-using InternetShcool.DAL.EF;
-using InternetShcool.DAL.Models;
+using InternetSchool.DAL.EF;
+using InternetSchool.DAL.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

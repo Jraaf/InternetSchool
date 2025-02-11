@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vV4sQ5kw/LRe2DKMOhxP8sG7vrwqM5OPpwUKegNJkm2OmufDfAkdtujsLQBNnsHXUCAKTGkI3uOYDx6+mHZA1w==",
+  "dgSpecHash": "Lrjb2KmrRlwxdvpoBRtzieM3WLCq4LaBWEFyAF2m0WpPhr/ocea6UzMQu0Cj5nNe1DM6SQyjXXWHkIVkAfhiYA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Acer\\source\\repos\\InternetSchool\\InternetSchool\\InternetSchool.Tests\\InternetSchool.Tests.csproj",
   "expectedPackageFiles": [
@@ -94,5 +94,12 @@
     "C:\\Users\\Acer\\.nuget\\packages\\xunit.extensibility.execution\\2.4.2\\xunit.extensibility.execution.2.4.2.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.5\\xunit.runner.visualstudio.2.4.5.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Acer\\source\\repos\\InternetSchool\\InternetSchool\\InternetSchool.Tests\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

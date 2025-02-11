@@ -40,7 +40,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InternetScool.BLL\InternetScool.BLL.csproj" />
-    <ProjectReference Include="..\InternetShcool.DAL\InternetShcool.DAL.csproj" />
+    <ProjectReference Include="..\InternetSchool.DAL\InternetSchool.DAL.csproj" />
   </ItemGroup>
 
 </Project>

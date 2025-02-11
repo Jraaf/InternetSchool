@@ -1,4 +1,4 @@
-﻿using InternetShcool.DAL.Models;
+﻿using InternetSchool.DAL.Models;
 
 namespace InternetScool.BLL.Service.Interfaces;
 

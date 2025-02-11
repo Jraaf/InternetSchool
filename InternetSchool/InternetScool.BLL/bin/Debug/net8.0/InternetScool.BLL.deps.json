@@ -10,7 +10,7 @@
         "dependencies": {
           "AutoMapper": "13.0.1",
           "InternetSchool.Common": "1.0.0",
-          "InternetShcool.DAL": "1.0.0",
+          "InternetSchool.DAL": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.7",
           "Microsoft.EntityFrameworkCore": "8.0.7",
           "Microsoft.EntityFrameworkCore.Abstractions": "8.0.7",
@@ -1871,16 +1871,7 @@
           "InternetSchool.Common.dll": {}
         }
       },
-      "InternetSchool.Tests/1.0.0": {
-        "dependencies": {
-          "Microsoft.NET.Test.Sdk": "17.6.0",
-          "xunit": "2.4.2"
-        },
-        "runtime": {
-          "InternetSchool.Tests.dll": {}
-        }
-      },
-      "InternetShcool.DAL/1.0.0": {
+      "InternetSchool.DAL/1.0.0": {
         "dependencies": {
           "AutoMapper": "13.0.1",
           "InternetSchool.Common": "1.0.0",
@@ -1891,7 +1882,16 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.7"
         },
         "runtime": {
-          "InternetShcool.DAL.dll": {}
+          "InternetSchool.DAL.dll": {}
+        }
+      },
+      "InternetSchool.Tests/1.0.0": {
+        "dependencies": {
+          "Microsoft.NET.Test.Sdk": "17.6.0",
+          "xunit": "2.4.2"
+        },
+        "runtime": {
+          "InternetSchool.Tests.dll": {}
         }
       }
     }
@@ -3006,12 +3006,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "InternetSchool.Tests/1.0.0": {
+    "InternetSchool.DAL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "InternetShcool.DAL/1.0.0": {
+    "InternetSchool.Tests/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

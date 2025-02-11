@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 **/.classpath
 **/.dockerignore
+=======
+﻿**/.dockerignore
+>>>>>>> 763bc9b4817c16f0cc8252b501282e4278220258
 **/.env
 **/.git
 **/.gitignore
@@ -8,6 +12,10 @@
 **/.toolstarget
 **/.vs
 **/.vscode
+<<<<<<< HEAD
+=======
+**/.idea
+>>>>>>> 763bc9b4817c16f0cc8252b501282e4278220258
 **/*.*proj.user
 **/*.dbmdl
 **/*.jfm
@@ -22,9 +30,13 @@
 **/secrets.dev.yaml
 **/values.dev.yaml
 LICENSE
+<<<<<<< HEAD
 README.md
 !**/.gitignore
 !.git/HEAD
 !.git/config
 !.git/packed-refs
 !.git/refs/heads/**
+=======
+README.md
+>>>>>>> 763bc9b4817c16f0cc8252b501282e4278220258

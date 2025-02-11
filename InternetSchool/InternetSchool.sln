@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetSchool", "InternetSchool\InternetSchool.csproj", "{7CDA2A65-AC99-4FF0-B384-D97FD2CB8B81}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetScool.BLL", "InternetScool.BLL\InternetScool.BLL.csproj", "{146E1631-ADC0-48F4-A68D-20C7F3BF4870}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetShcool.DAL", "InternetShcool.DAL\InternetShcool.DAL.csproj", "{6FFDA590-E593-4D18-B983-1B49218E59E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetSchool.DAL", "InternetSchool.DAL\InternetSchool.DAL.csproj", "{6FFDA590-E593-4D18-B983-1B49218E59E2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetSchool.Common", "InternetSchool.Common\InternetSchool.Common.csproj", "{950533CC-810D-4271-A995-14B5BDD90111}"
 EndProject
@@ -15,16 +13,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetSchool.Tests", "Int
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F606F264-BB04-4C9B-8D6C-3304D7C6B010}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2B7DF9A1-93C5-45E0-A33D-15621F57C848}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		compose.yaml = compose.yaml
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetSchool", "InternetSchool\InternetSchool.csproj", "{1740D1A1-F9D4-4CD5-BF33-E2F8B1027248}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7CDA2A65-AC99-4FF0-B384-D97FD2CB8B81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7CDA2A65-AC99-4FF0-B384-D97FD2CB8B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7CDA2A65-AC99-4FF0-B384-D97FD2CB8B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7CDA2A65-AC99-4FF0-B384-D97FD2CB8B81}.Release|Any CPU.Build.0 = Release|Any CPU
 		{146E1631-ADC0-48F4-A68D-20C7F3BF4870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{146E1631-ADC0-48F4-A68D-20C7F3BF4870}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{146E1631-ADC0-48F4-A68D-20C7F3BF4870}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +48,10 @@ Global
 		{F606F264-BB04-4C9B-8D6C-3304D7C6B010}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F606F264-BB04-4C9B-8D6C-3304D7C6B010}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F606F264-BB04-4C9B-8D6C-3304D7C6B010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1740D1A1-F9D4-4CD5-BF33-E2F8B1027248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1740D1A1-F9D4-4CD5-BF33-E2F8B1027248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1740D1A1-F9D4-4CD5-BF33-E2F8B1027248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1740D1A1-F9D4-4CD5-BF33-E2F8B1027248}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

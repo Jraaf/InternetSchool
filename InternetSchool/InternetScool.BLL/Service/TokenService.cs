@@ -1,5 +1,5 @@
 ﻿using InternetScool.BLL.Service.Interfaces;
-using InternetShcool.DAL.Models;
+using InternetSchool.DAL.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
