@@ -398,3 +398,16 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/InternetSchool/.vs/ProjectEvaluation/internetschool.projects.v7.bin
+/InternetSchool/.vs/InternetSchool/v17/.suo
+/InternetSchool/.vs/InternetSchool/DesignTimeBuild/.dtbcache.v2
+/InternetSchool/.vs/InternetSchool/v17/.futdcache.v2
+/InternetSchool/InternetSchool/obj/Debug/net8.0/InternetSchool.AssemblyInfo.cs
+/InternetSchool/.vs/ProjectEvaluation/internetschool.metadata.v7.bin
+/InternetSchool/InternetSchool/obj/Debug/net8.0/InternetSchool.AssemblyInfoInputs.cache
+/InternetSchool/InternetSchool.Common/obj/Debug/net8.0/InternetSchool.Common.AssemblyInfo.cs
+/InternetSchool/InternetSchool.Common/obj/Debug/net8.0/InternetSchool.Common.AssemblyInfoInputs.cache
+/InternetSchool/InternetSchool.Tests/obj/Debug/net8.0/InternetSchool.Tests.AssemblyInfo.cs
+/InternetSchool/InternetSchool.Tests/obj/Debug/net8.0/InternetSchool.Tests.AssemblyInfoInputs.cache
+/InternetSchool/InternetScool.BLL/obj/Debug/net8.0/InternetScool.BLL.AssemblyInfo.cs
+/InternetSchool/InternetScool.BLL/obj/Debug/net8.0/InternetScool.BLL.AssemblyInfoInputs.cache
